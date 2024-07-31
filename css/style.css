@@ -25,6 +25,7 @@ img {
 	flex-direction: column;
 	min-height: 100vh;
 	overflow: hidden;
+	padding: 0 120px;
 }
 
 .p404 {
@@ -48,11 +49,11 @@ img {
 		font-size: 25px;
 		margin-top: 15px;
 		padding: 10px 20px;
+		background-color: #282D30;
+		border-radius: 15px;
 	}
-
 		.p404 .link:hover {
 			background-color: #1C1E21;
-			border-radius: 15px;
 		}
 
 
@@ -65,6 +66,7 @@ img {
 	padding: 15px 30px;
 	font-size: 20px;
 	background-color: #1C1E21;
+	margin: 0 -120px;
 }
 
 	.header .logo {
@@ -92,40 +94,152 @@ img {
 
 
 
-.main .logo {
+.div_text {
+	margin: 30px 0;
+	font-family: Russo One;
+	font-size: 35px;
+}
+
+.mlink {
+	display: flex;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: #282D30;
+	border-radius: 15px;
+	width: 150px;
+}
+	.mlink:hover {
+		background-color: #1C1E21;
+	}
+
+	.mlink .icon {
+		height: 40px;
+	}
+
+	.mlink .text {
+		margin-left: 10px;
+		font-size: 25px;
+	}
+
+
+.info {
 	background-image: url(../img/header.png);
 	background-position: center;
+	background-size: cover;
 	height: 100vh;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	margin: 0 -120px;
 }
 
-	.main .logo .icon {
-		height: 75%;
+	.info .icon {
+		height: 560px;
+		margin: 40px 40px 0 0;
 	}
 
-	.main .logo .panel {
-		margin-top: 40px;
+	.info .panel {
+		margin: 40px 40px 0 0;
 		background-color: #141719;
 		padding: 30px;
 		border-radius: 20px;
 	}
 
-	.main .logo .title {
+	.info .title {
 		font-family: Russo One;
 		font-size: 45px;
 	}
 
-	.main .logo .text {
+	.info .text {
 		margin-top: 10px;
 		font-size: 25px;
 	}
 
+.bio {
+	border-radius: 20px;
+	background-color: #1C1E21;
+	display: flex;
+	margin: 30px 0;
+}
+
+	.bio .avatar {
+		margin: 20px;
+		height: 240px;
+		background-color: #141719;
+		border-radius: 10px;
+	}
+
+	.bio .des {
+		margin: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.bio .title {
+		font-family: Russo One;
+		font-size: 30px;
+	}
+
+	.bio .text {
+		font-size: 20px;
+		margin-top: 5px;
+	}
+
+	.bio .links {
+		margin-top: 10px;
+		display: flex;
+	}
+
+	.bio .link {
+		padding: 8px 10px;
+		display: flex;
+		align-items: center;
+		border-radius: 10px;
+		margin-right: 10px;
+	}
+
+		.bio .link .icon {
+			height: 20px;
+		}
+
+		.bio .link .text {
+			margin: 0 0 0 5px;
+			font-size: 18px;
+		}
+
+		.bio .link.youtube {
+			background-color: red;
+		}
+			.bio .link.youtube:hover {
+				background-color: #B20312;
+			}
+		.bio .link.gamejolt {
+			background-color: #2F7F6F;
+		}
+
+			.bio .link.gamejolt:hover {
+				background-color: #0F5B52;
+			}
+		.bio .link.itch_io {
+			background-color: #FF5F5F;
+		}
+
+			.bio .link.itch_io:hover {
+				background-color: #CC434E;
+			}
+		.bio .link.discord {
+			background-color: #5662F6;
+		}
+
+			.bio .link.discord:hover {
+				background-color: #4242E5;
+			}
+
 
 
 .footer {
-	margin-top: auto;
+	margin: auto -120px 0 -120px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -141,6 +255,7 @@ img {
 
 		.footer .links .link {
 			color: #556166;
+			margin-right: auto;
 		}
 			.footer .links .link:hover {
 				color: white;
