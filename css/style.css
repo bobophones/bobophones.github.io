@@ -50,14 +50,13 @@ img {
 		display: flex;
 		align-items: center;
 	}
-
 		.header .logo .icon {
 			height: 50px;
 		}
-
 		.header .logo .text {
 			margin-left: 10px;
 			font-family: Russo One;
+			max-width: 130px;
 		}
 
 	.header .link {
@@ -93,17 +92,15 @@ img {
 	padding: 10px;
 	background-color: #282D30;
 	border-radius: 15px;
-	margin-right: 20px;
+	margin: 0 10px;
 }
 	.mlink:hover {
 		background-color: #1C1E21;
 	}
-
 	.mlink .icon {
 		height: 30px;
 		margin: 5px;
 	}
-
 	.mlink .text {
 		margin: 0 10px;
 		font-size: 25px;
@@ -128,7 +125,6 @@ img {
 			height: 400px;
 		}
 
-
 	.info .panel {
 		margin: 80px 40px 0 0;
 		background-color: #141719;
@@ -136,15 +132,15 @@ img {
 		border-radius: 20px;
 		box-shadow: rgb(0, 0, 0, 0.4) 0 10px 25px 5px;
 	}
-
 	.info .title {
 		font-size: 45px;
 	}
-
 	.info .text {
 		margin-top: 10px;
 		font-size: 25px;
 	}
+
+
 
 .bio, .game {
 	border-radius: 20px;
@@ -152,34 +148,28 @@ img {
 	display: flex;
 	margin: 30px 0;
 }
-
 	.bio .avatar, .game .icon {
 		margin: 20px;
 		height: 240px;
 		background-color: #141719;
 		border-radius: 10px;
 	}
-
 	.bio .des, .game .des {
 		margin: 20px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 	}
-
 	.bio .title, .game .title {
 		font-size: 30px;
 	}
-
 	.bio .text, .game .text {
 		margin-top: 10px;
 	}
-
 	.bio .links {
 		margin-top: 20px;
 		display: flex;
 	}
-
 	.bio .link, .game .link {
 		padding: 8px 10px;
 		display: flex;
@@ -196,19 +186,16 @@ img {
 		.game .link:hover {
 			background-color: #282D30;
 		}
-
 		.bio .link .icon, .game .link .icon {
 			height: 20px;
 			border-radius: 0;
 			margin: 0;
 			background-color: initial;
 		}
-
 		.bio .link .text, .game .link .text {
 			margin: 0 0 0 5px;
 			font-size: 18px;
 		}
-
 		.bio .link.youtube {
 			background-color: red;
 		}
@@ -242,10 +229,13 @@ img {
 	background-color: #1C1E21;
 	padding: 10px 20px;
 }
-
 	.game_des .text {
 		margin: 10px 0;
 	}
+.mlink .size {
+	color: #97ADB2;
+	margin: 0 10px 0 -5px;
+}
 
 
 
@@ -257,27 +247,25 @@ img {
 	background-color: #1C1E21;
 	font-size: 20px;
 }
-
 	.footer .links {
-		width: 300px;
+		width: 150px;
 		display: flex;
 		flex-direction: column;
 	}
-
-		.footer .links .link {
-			color: #556166;
-			margin-right: auto;
+	.footer .link {
+		color: #556166;
+		margin-right: auto;
+		padding: 2px 0;
+	}
+		.footer .link:hover {
+			color: white;
 		}
-			.footer .links .link:hover {
-				color: white;
-			}
 
 	.footer .copyright {
-		width: 300px;
+		width: 150px;
 		text-align: center;
 		color: #556166;
 	}
-
 	.footer .ktc_smoke {
 		height: 120px;
 	}
@@ -405,7 +393,7 @@ input[name="r"] {
 .changelog .panel {
 	background-color: #1C1E21;
 	border-radius: 20px;
-	margin: 120px 100px 100px 80px;
+	margin: 120px 100px 80px 100px;
 }
 
 .changelog .content {
@@ -427,4 +415,136 @@ input[name="r"] {
 
 .changelog .text {
 	margin-top: 10px;
+}
+
+
+@media (max-width: 720px) {
+	* {
+		font-size: 16px;
+	}
+
+	.page {
+		padding: 0 20px;
+	}
+
+	.header {
+		padding: 15px;
+		margin: 0 -20px;
+	}
+		.header .logo .icon {
+			height: 40px;
+		}
+		.header .logo .text {
+			max-width: 100px;
+		}
+		.header .link {
+			margin-left: 10px;
+			padding: 8px 12px;
+		}
+
+	.div_text {
+		margin: 15px 0;
+		font-size: 25px;
+	}
+
+	.mlink {
+		padding: 8px;
+	}
+		.mlink .icon {
+			height: 25px;
+		}
+		.mlink .text {
+			font-size: 20px;
+		}
+
+	.info {
+		flex-direction: column;
+		margin: -80px -20px 0 -20px;
+	}
+		.info .icon {
+			height: 300px;
+			margin: 70px 0 0 0;
+		}
+		.info .panel {
+			margin: 0 20px 40px 20px;
+			text-align: center;
+		}
+		.info .title {
+			font-size: 30px;
+		}
+		.info .text {
+			font-size: 20px;
+		}
+
+	.bio, .game {
+		margin: 15px 0;
+		flex-direction: column;
+	}
+		.bio .avatar, .game .icon {
+			margin: 20px 40px;
+			height: auto;
+		}
+		.bio .des, .game .des {
+			margin: 0 20px 20px 20px;
+		}
+		.bio .title, .game .title {
+			font-size: 25px;
+		}
+		.bio .text, .game .text {
+			margin-top: 8px;
+		}
+		.bio .links {
+			flex-direction: column;
+			align-items: flex-start;
+			margin-top: 8px;
+		}
+		.bio .link {
+			margin: 8px 0 0 0;
+			padding: 6px 8px;
+		}
+			.bio .link .text {
+				font-size: 15px;
+			}
+			.bio .link .icon {
+				height: 18px;
+			}
+
+	.info .icon.game {
+		height: 250px;
+	}
+	.lgame {
+		margin-bottom: 20px;
+	}
+	.lchangelog {
+		margin-top: -20px;
+	}
+
+	.footer {
+		margin: auto -20px 0 -20px;
+		padding: 0 20px;
+	}
+		.footer .ktc_smoke {
+			height: 100px;
+		}
+
+	.screenshots {
+		width: 360px;
+		height: 189px;
+	}
+	.sc_nav_bar {
+		width: 40px;
+		height: 18px;
+	}
+	.item {
+		flex-direction: column;
+	}
+	.changelog .panel {
+		margin: 110px 30px 70px 30px;
+	}
+	.changelog .ver {
+		font-size: 25px;
+	}
+	.changelog .text {
+		margin-top: 9px;
+	}
 }
