@@ -2,6 +2,7 @@
 	padding: 0;
 	margin: 0;
 	font-family: Ubuntu;
+	font-size: 20px;
 	transition: 0.25s;
 	color: white;
 }
@@ -17,7 +18,7 @@ img {
 }
 
 .body {
-	background: #141719;
+	background-color: #141719;
 }
 
 .page {
@@ -28,33 +29,6 @@ img {
 	padding: 0 120px;
 }
 
-.p404 {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-	.p404 .title {
-		font-family: Russo One;
-		font-size: 45px;
-	}
-
-	.p404 .text {
-		font-size: 25px;
-	}
-
-	.p404 .link {
-		font-size: 25px;
-		margin-top: 15px;
-		padding: 10px 20px;
-		background-color: #282D30;
-		border-radius: 15px;
-	}
-		.p404 .link:hover {
-			background-color: #1C1E21;
-		}
 
 .title {
 	font-family: Russo One;
@@ -68,7 +42,6 @@ img {
 	display: flex;
 	align-items: center;
 	padding: 15px 30px;
-	font-size: 20px;
 	background-color: #1C1E21;
 	margin: 0 -120px;
 }
@@ -103,35 +76,41 @@ img {
 }
 
 .div_text {
-	margin: 30px 0;
+	margin: 20px 0;
 	font-family: Russo One;
 	font-size: 35px;
+	text-align: center;
+}
+
+.item {
+	display: flex;
+	justify-content: center;
 }
 
 .mlink {
 	display: flex;
 	align-items: center;
-	padding: 10px 20px;
+	padding: 10px;
 	background-color: #282D30;
 	border-radius: 15px;
-	width: 150px;
+	margin-right: 20px;
 }
 	.mlink:hover {
 		background-color: #1C1E21;
 	}
 
 	.mlink .icon {
-		height: 40px;
+		height: 30px;
+		margin: 5px;
 	}
 
 	.mlink .text {
-		margin-left: 10px;
+		margin: 0 10px;
 		font-size: 25px;
 	}
 
 
 .info {
-	background-image: url(../img/header.png);
 	background-position: center;
 	background-size: cover;
 	height: 100vh;
@@ -143,14 +122,19 @@ img {
 
 	.info .icon {
 		height: 560px;
-		margin: 40px 40px 0 0;
+		margin: 80px 40px 0 0;
 	}
+		.info .icon.game {
+			height: 400px;
+		}
+
 
 	.info .panel {
-		margin: 40px 40px 0 0;
+		margin: 80px 40px 0 0;
 		background-color: #141719;
 		padding: 30px;
 		border-radius: 20px;
+		box-shadow: rgb(0, 0, 0, 0.4) 0 10px 25px 5px;
 	}
 
 	.info .title {
@@ -188,7 +172,6 @@ img {
 	}
 
 	.bio .text, .game .text {
-		font-size: 20px;
 		margin-top: 10px;
 	}
 
@@ -250,7 +233,19 @@ img {
 			.bio .link.discord:hover {
 				background-color: #4242E5;
 			}
-			
+
+
+
+.game_des {
+	margin: 20px 0;
+	border-radius: 20px;
+	background-color: #1C1E21;
+	padding: 10px 20px;
+}
+
+	.game_des .text {
+		margin: 10px 0;
+	}
 
 
 
@@ -289,91 +284,69 @@ img {
 
 
 
-
-
-
-
-#r1:checked ~ .s1 {
-	margin-left: 0;
-}
-
-#r2:checked ~ .s1 {
-	margin-left: -20%;
-}
-
-#r3:checked ~ .s1 {
-	margin-left: -40%;
-}
-
-#r4:checked ~ .s1 {
-	margin-left: -60%;
-}
-
-#r5:checked ~ .s1 {
-	margin-left: -80%;
-}
-
-
-.screenshot {
-	width: 20%;
-}
-
-	.screenshot:hover {
-		cursor: pointer;
-	}
-
-.slides {
-	width: 500%;
-	height: 100%;
-	display: flex;
-}
-
-.section_screenshots {
+.game_screenshots {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 }
-
+#r1:checked ~ .s1 {
+	margin-left: 0;
+}
+#r2:checked ~ .s1 {
+	margin-left: -20%;
+}
+#r3:checked ~ .s1 {
+	margin-left: -40%;
+}
+#r4:checked ~ .s1 {
+	margin-left: -60%;
+}
+#r5:checked ~ .s1 {
+	margin-left: -80%;
+}
+.screenshot {
+	width: 20%;
+}
+	.screenshot:hover {
+		cursor: pointer;
+	}
+.slides {
+	width: 500%;
+	height: 100%;
+	display: flex;
+}
 .screenshots {
 	width: 800px;
 	height: 420px;
 	border-radius: 10px;
 	overflow: hidden;
 }
-
 .screenshot img {
 	width: 100%;
 	height: 100%;
 }
-
 .screenshots_nav {
 	display: flex;
 	justify-content: center;
 	position: relative;
-	margin: 15px 15px 0 15px;
+	margin: 10px 15px 0 15px;
 }
-
 .sc_nav_bar {
 	width: 50px;
 	height: 20px;
 	margin: 5px;
 	cursor: pointer;
-	background-color: #1B1D33;
+	background-color: #282D30;
 	border-radius: 5px;
 }
-
 	.sc_nav_bar:hover {
-		background-color: #170F2B;
-		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-		transform: translate(0, -5px);
+		background-color: #1C1E21;
 	}
-
 input[name="r"] {
 	position: absolute;
 	visibility: hidden;
 }
-
 .gallery {
 	position: fixed;
 	left: 0;
@@ -389,22 +362,21 @@ input[name="r"] {
 	opacity: 0;
 	transition: 0.125s;
 }
-
 	.gallery.opened {
 		visibility: visible;
 		opacity: 1;
 	}
-
 .gallery_img {
 	z-index: 4;
 	max-width: 95%;
 	max-height: 95%;
 	transform: scale(0.75);
 }
-
 .gallery.opened .gallery_img {
 	transform: scale(1);
 }
+
+
 
 .changelog {
 	position: fixed;
@@ -422,12 +394,37 @@ input[name="r"] {
 	visibility: hidden;
 	opacity: 0;
 }
-
 	.changelog.opened {
 		visibility: visible;
 		opacity: 1;
 	}
-
 #changelog_b {
 	display: none;
+}
+
+.changelog .panel {
+	background-color: #1C1E21;
+	border-radius: 20px;
+	margin: 120px 100px 100px 80px;
+}
+
+.changelog .content {
+	background: #141719;
+	border-radius: 20px;
+	padding: 15px 20px;
+	margin: 20px;
+}
+
+.changelog .title {
+	font-size: 30px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.changelog .ver {
+	font-size: 28px;
+}
+
+.changelog .text {
+	margin-top: 10px;
 }

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="../../img/icon.svg" type="image/png">
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Ubuntu&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="KoteykaTheCat">
+	<meta property="og:site_name" content="Bobophone Studios">
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="og:locale" content="ru">
+
+	<title> Goddaamn Tower Defense </title>
+	<meta property="og:title" content="Goddaamn Tower Defense">
+	<meta name="description" content="На ваш замок нападают разнообразные клещи из пещеры">
+	<meta property="og:description" content="На ваш замок нападают разнообразные клещи из пещеры">
+	<meta name="keywords" content="its autumn, it's autumn, осень">
+	<meta property="og:image" content="https://raw.githubusercontent.com/bobophonestudios/bobophonestudios.github.io/main/img/og_gtd.png">
+	<meta property="twitter:image" content="https://raw.githubusercontent.com/bobophonestudios/bobophonestudios.github.io/main/img/og_gtd.png">
+	<meta property="og:url" content="https://https://bobophonestudios.github.io/games/itsautumn">
+</head>
+
+<body class="body">
+	<div class="page">
+		<header class="header">
+			<div class="logo">
+				<img class="icon" src="../../img/icon.svg">
+				<div class="text"> Bobophone Studios </div>
+			</div>
+			<a class="link" href="../../"> Главная </a>
+			<a class="link" href="../"> Игры </a>
+		</header>
+
+		<main class="main">
+			<section class="info" style="background-image: url(../../img/header_gtd.png);">
+				<img class="icon game" style="border-radius: 30px" src="../../img/icon_gtd.png">
+				<div class="panel">
+					<div class="title"> Goddaamn Tower Defense </div>
+				</div>
+			</section>
+
+			<section class="game_des">
+				<div class="text">
+					На ваш замок нападают разнообразные клещи из пещеры
+				</div>
+				<div class="text">
+					Это версия <span style="color: crimson">Dev!</span> В ней нет всех механик, интерактива и т.д.
+				</div>
+				<div class="text">
+					Версия: Dev 0.0.0.1 <br>
+					Дата обновления: 19 марта 2024 <br>
+					Дата выхода: 19 марта 2024
+				</div>
+			</section>
+
+			<section class="game_screenshots">
+				<div class="gallery" id="gallery" onclick="close_gallery()">
+					<img class="gallery_img" src="../../img/icon_en.svg" id="gallery_img">
+				</div>
+
+				<div class="screenshots">
+					<div class="slides">
+						<input type="radio" name="r" id="r1" checked>
+						<input type="radio" name="r" id="r2">
+						<input type="radio" name="r" id="r3">
+						<input type="radio" name="r" id="r4">
+
+						<div class="screenshot s1"><img src="../../img/screenshots/gtd_0.png" onclick="open_gallery(this)"></div>
+						<div class="screenshot"><img src="../../img/screenshots/gtd_1.png" onclick="open_gallery(this)"></div>
+						<div class="screenshot"><img src="../../img/screenshots/gtd_2.png" onclick="open_gallery(this)"></div>
+						<div class="screenshot"><img src="../../img/screenshots/gtd_3.png" onclick="open_gallery(this)"></div>
+					</div>
+				</div>
+				<div class="screenshots_nav">
+					<label for="r1" class="sc_nav_bar"></label>
+					<label for="r2" class="sc_nav_bar"></label>
+					<label for="r3" class="sc_nav_bar"></label>
+					<label for="r4" class="sc_nav_bar"></label>
+				</div>
+			</section>
+
+			<div class="div_text"> Скачать: </div>
+			<div class="item">
+				<a class="mlink" href="https://www.dropbox.com/scl/fi/348lpj7ar1r4ibfdsr90k/Goddaamn-Tower-Defense.zip?rlkey=c89pcgym81q26i8ja77hmh6bi&st=wqjceyh4&dl=1">
+					<img class="icon" src="../../img/icon_windows.svg">
+					<div class="text"> Windows (105 Мб) </div>
+				</a>
+				<a class="mlink" href="https://www.dropbox.com/scl/fi/fu7u7hdg8mk4al0iuccia/Goddaamn-Tower-Defense.apk?rlkey=65wyl6v7t63iuno4ynl6u9174&st=lj2e6ohz&dl=1">
+					<img class="icon" src="../../img/icon_android.svg">
+					<div class="text"> Android (56 Мб) </div>
+				</a>
+			</div>
+
+			<div class="item" style="margin: 20px 0">
+				<button id="changelog_b"></button>
+				<label class="mlink" style="cursor: pointer" for="changelog_b">
+					<span class="text"> Изменения </span>
+				</label>
+			</div>
+
+
+
+			<section class="changelog" id="changelog">
+				<div class="panel">
+					<div class="title"> Изменения </div>
+					<div class="content">
+						<div class="ver"> Dev 0.0.0.1 </div>
+						<div class="text">
+							• Игра вышла
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="links">
+				<a class="link" href="https://discord.gg/yxWQN6Vruh"> Discord </a>
+				<a class="link" href="https://www.youtube.com/@bobophonestudios"> YouTube </a>
+				<a class="link" href="https://steamcommunity.com/groups/bobophonestudios"> Steam Group </a>
+			</div>
+			<img class="ktc_smoke" src="../../img/ktc_smoke.gif">
+			<div class="copyright"> © 2024 Bobophone Studios </div>
+		</footer>
+
+
+		<script>
+			function open_gallery(img) {
+				document.getElementById("gallery").classList.add("opened");
+				document.getElementById("gallery_img").src = img.src;
+			}
+			function close_gallery() {
+				document.getElementById("gallery").classList.remove("opened");
+			}
+
+			document.getElementById("changelog_b").addEventListener("click", function () {
+				document.getElementById("changelog").classList.add("opened");
+			})
+			function close_changelog() {
+				document.getElementById("changelog").classList.remove("opened");
+			}
+			document.querySelector("#changelog .panel").addEventListener("click", event => {
+				event._click_on_panel = true;
+			})
+			document.getElementById("changelog").addEventListener("click", event => {
+				if (event._click_on_panel) return;
+				event.currentTarget.classList.remove("opened");
+			})
+		</script>
+	</div>
+</body>
+</html>
