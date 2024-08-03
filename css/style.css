@@ -237,6 +237,9 @@ img {
 	color: #97ADB2;
 	margin: 0 10px 0 -5px;
 }
+.date {
+	color: #97ADB2;
+}
 
 
 
@@ -306,8 +309,8 @@ img {
 	display: flex;
 }
 .screenshots {
-	width: 800px;
-	height: 420px;
+	width: 960px;
+	height: 540px;
 	border-radius: 10px;
 	overflow: hidden;
 }
@@ -529,8 +532,8 @@ input[name="r"] {
 		}
 
 	.screenshots {
-		width: 360px;
-		height: 189px;
+		width: 320px;
+		height: 180px;
 	}
 	.sc_nav_bar {
 		width: 40px;
