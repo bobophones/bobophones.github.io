@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="../../img/icon.svg" type="image/png">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Ubuntu&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="KoteykaTheCat">
+    <meta property="og:site_name" content="Bobophone Studios">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:locale" content="ru">
+
+    <title> It's Autumn </title>
+    <meta property="og:title" content="It's Autumn">
+    <meta name="description" content="РПГ майнкрафт мод">
+    <meta property="og:description" content="РПГ майнкрафт мод">
+    <meta name="keywords" content="ktc rpg, ktcrpg">
+    <meta property="og:image" content="https://raw.githubusercontent.com/bobophonestudios/bobophonestudios.github.io/main/img/og_ktc_rpg.png">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/bobophonestudios/bobophonestudios.github.io/main/img/og_ktc_rpg.png">
+    <meta property="og:url" content="https://https://bobophonestudios.github.io/games/ktcrpg">
+</head>
+
+<body class="body">
+    <div class="page">
+        <header class="header">
+            <div class="logo">
+                <img class="icon" src="../../img/icon.svg">
+                <div class="text"> Bobophone Studios </div>
+            </div>
+            <a class="link" href="../../"> Главная </a>
+            <a class="link" href="../"> Игры </a>
+        </header>
+
+        <main class="main">
+            <section class="info" style="background-image: url(../../img/header_ktc_rpg.png)">
+                <img class="icon game" style="border-radius: 30px; box-shadow: rgb(0, 0, 0, 0.4) 0 10px 25px 5px" src="../../img/icon_ktc_rpg.png">
+                <div class="panel">
+                    <div class="title"> KTC RPG </div>
+                </div>
+            </section>
+
+            <section class="game_des">
+                <div class="text">
+                    Окунитесь в мир, полный мифических существ и величественных сооружений, в KTC RPG. Здесь вы столкнетесь с множеством новых мобов, таких как гоблины, лесные духи, красные панды и многие другие, каждый из которых обладает уникальным поведением и способностями
+                </div>
+                <div class="text">
+                    Версия: 0.0.1 <br>
+                    Дата обновления: - <br>
+                    Дата выхода: -
+                </div>
+            </section>
+
+            <section class="game_screenshots">
+                <div class="gallery" id="gallery" onclick="close_gallery()">
+                    <img class="gallery_img" src="" id="gallery_img">
+                </div>
+
+                <div class="screenshots">
+                    <div class="slides">
+                        <input type="radio" name="r" id="r1" checked>
+                        <input type="radio" name="r" id="r2">
+                        <input type="radio" name="r" id="r3">
+
+                        <div class="screenshot s1"><img src="../../img/icon_ktc_rpg.png" onclick="open_gallery(this)"></div>
+                        <div class="screenshot"><img src="../../img/icon_ktc_rpg.png" onclick="open_gallery(this)"></div>
+                        <div class="screenshot"><img src="../../img/icon_ktc_rpg.png" onclick="open_gallery(this)"></div>
+                    </div>
+                </div>
+                <div class="screenshots_nav">
+                    <label for="r1" class="sc_nav_bar"></label>
+                    <label for="r2" class="sc_nav_bar"></label>
+                    <label for="r3" class="sc_nav_bar"></label>
+                </div>
+            </section>
+
+            <div class="div_text"> Скачать </div>
+            <div class="item">
+                <a class="mlink lgame" href="https://www.curseforge.com/minecraft/mc-mods/ktc-rpg">
+                    <img class="icon" src="../../img/icon_download.svg">
+                    <div class="text"> CurseForge </div>
+                </a>
+            </div>
+
+            <div class="item" style="margin: 20px 0">
+                <button id="changelog_b"></button>
+                <label class="mlink lchangelog" style="cursor: pointer" for="changelog_b">
+                    <span class="text"> Изменения </span>
+                </label>
+            </div>
+
+
+
+            <section class="changelog" id="changelog">
+                <div class="panel">
+                    <div class="title"> Изменения </div>
+                    <div class="content">
+                        <div class="ver"> 0.0.1 </div>
+                        <div class="date"> - </div>
+                        <div class="text">
+                            • 
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="links">
+                <a class="link" href="https://discord.gg/yxWQN6Vruh"> Discord </a>
+                <a class="link" href="https://www.youtube.com/@bobophonestudios"> YouTube </a>
+                <a class="link" href="https://steamcommunity.com/groups/bobophonestudios"> Steam Group </a>
+            </div>
+            <img class="ktc_smoke" src="../../img/ktc_smoke.gif">
+            <div class="copyright"> © 2024 Bobophone Studios </div>
+        </footer>
+
+
+        <script>
+			function open_gallery(img) {
+				document.getElementById("gallery").classList.add("opened");
+				document.getElementById("gallery_img").src = img.src;
+			}
+			function close_gallery() {
+				document.getElementById("gallery").classList.remove("opened");
+			}
+
+			document.getElementById("changelog_b").addEventListener("click", function () {
+				document.getElementById("changelog").classList.add("opened");
+			})
+			function close_changelog() {
+				document.getElementById("changelog").classList.remove("opened");
+			}
+			document.querySelector("#changelog .panel").addEventListener("click", event => {
+				event._click_on_panel = true;
+			})
+			document.getElementById("changelog").addEventListener("click", event => {
+				if (event._click_on_panel) return;
+				event.currentTarget.classList.remove("opened");
+			})
+        </script>
+    </div>
+</body>
+</html>

@@ -75,16 +75,24 @@ img {
 	margin-top: 80px;
 }
 
+.mb {
+	display: none;
+}
+
 .div_text {
 	margin: 20px 0;
 	font-family: Russo One;
 	font-size: 35px;
 	text-align: center;
 }
+	.div_text.mid {
+		margin: 20px -15% 20px 0;
+	}
 
 .item {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 .mlink {
@@ -107,6 +115,26 @@ img {
 		font-size: 25px;
 	}
 
+.llink {
+	height: 300px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;
+	background-color: #282D30;
+	background-position: -30px 10px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+	.llink:hover {
+		background-color: #1C1E21;
+	}
+	.llink .text {
+		font-family: Russo One;
+		font-size: 48px;
+	}
+
 
 .info {
 	background-position: center;
@@ -124,6 +152,7 @@ img {
 	}
 		.info .icon.game {
 			height: 400px;
+			width: auto;
 		}
 
 	.info .panel {
@@ -142,13 +171,38 @@ img {
 	}
 
 
+.games_discord {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0 -80px;
+}
 
+.our_games, .our_discord {
+	margin: 0 20px;
+	min-width: 400px;
+}
+
+
+.about_us, .games {
+	padding-right: 15%;
+}
 .bio, .game {
 	border-radius: 20px;
 	background-color: #1C1E21;
 	display: flex;
-	margin: 30px 0;
+	width: 100%;
 }
+	.bio.right, .game.right {
+		margin: 30px 0 50px 15%;
+	}
+	.bio.left, .game.left {
+		margin: 30px 15% 50px 0;
+	}
+	.bio.right {
+		justify-content: right;
+		text-align: right;
+	}
 	.bio .avatar, .game .icon {
 		margin: 20px;
 		height: 240px;
@@ -398,6 +452,7 @@ input[name="r"] {
 	background-color: #1C1E21;
 	border-radius: 20px;
 	margin: 120px 100px 80px 100px;
+	min-width: 400px;
 }
 
 .changelog .content {
@@ -428,7 +483,14 @@ input[name="r"] {
 	}
 
 	.page {
-		padding: 0 20px;
+		padding: 0 22px;
+	}
+
+	.mb {
+		display: block;
+	}
+	.pc {
+		display: none;
 	}
 
 	.header {
@@ -450,6 +512,9 @@ input[name="r"] {
 		margin: 15px 0;
 		font-size: 25px;
 	}
+		.div_text.mid {
+			margin: 20px 0;
+		}
 
 	.mlink {
 		padding: 8px;
@@ -460,6 +525,11 @@ input[name="r"] {
 		.mlink .text {
 			font-size: 20px;
 		}
+
+	.llink {
+		height: 200px;
+		background-position: -30px 0px;
+	}
 
 	.info {
 		flex-direction: column;
@@ -480,10 +550,32 @@ input[name="r"] {
 			font-size: 20px;
 		}
 
+	.games_discord {
+		flex-direction: column;
+	}
+
+	.our_games, .our_discord {
+		min-width: 300px;
+	}
+
+	.about_us, .games {
+		padding: 0;
+	}
+
 	.bio, .game {
 		margin: 15px 0;
 		flex-direction: column;
 	}
+		.bio.right, .game.right {
+			margin: 15px 0;
+		}
+		.bio.left, .game.left {
+			margin: 15px 0;
+		}
+		.bio.right, .game.right {
+			justify-content: left;
+			text-align: left;
+		}
 		.bio .avatar, .game .icon {
 			margin: 20px 40px;
 			height: auto;
@@ -544,6 +636,7 @@ input[name="r"] {
 	}
 	.changelog .panel {
 		margin: 110px 30px 70px 30px;
+		min-width: 300px;
 	}
 	.changelog .ver {
 		font-size: 25px;
