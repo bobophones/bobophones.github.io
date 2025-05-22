@@ -1,10 +1,11 @@
 * {
 	padding: 0;
 	margin: 0;
-	font-family: Ubuntu;
+	font-family: Arimo;
 	font-size: 20px;
 	transition: 0.25s;
 	color: white;
+	scroll-behavior: smooth;
 }
 
 a {
@@ -26,12 +27,11 @@ img {
 	flex-direction: column;
 	min-height: 100vh;
 	overflow: hidden;
-	padding: 0 120px;
 }
 
 
 .title {
-	font-family: Russo One;
+	font-family: Jost;
 }
 
 
@@ -39,11 +39,11 @@ img {
 .header {
 	position: fixed;
 	width: 100%;
+	height: 50px;
 	display: flex;
 	align-items: center;
 	padding: 15px 30px;
 	background-color: #1C1E21;
-	margin: 0 -120px;
 	box-shadow: rgb(0, 0, 0, 0.4) 0px 0px 25px;
 }
 
@@ -56,19 +56,65 @@ img {
 		}
 		.header .logo .text {
 			margin-left: 10px;
-			font-family: Russo One;
+			font-family: Jost;
 			max-width: 130px;
+			line-height: 22px;
 		}
 
-	.header .link {
+	.header .link, .burger_menu .link {
 		margin-left: 30px;
 		padding: 10px 20px;
 	}
-		.header .link:hover {
+		.header .link:hover, .burger_menu .link:hover {
 			background-color: #141719;
 			border-radius: 15px;
 		}
-
+	.header .burger_icon {
+		margin-right: 30px;
+		height: 30px;
+	}
+		.header .burger_icon:hover {
+			cursor: pointer;
+		}
+.burger {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	background-color: rgb(0, 0, 0, 0.5);
+	z-index: 4;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.125s;
+}
+	.burger.opened {
+		visibility: visible;
+		opacity: 1;
+	}
+	.burger.opened .burger_menu {
+		transform: translateX(0);
+	}
+.burger_menu {
+	position: fixed;
+	height: 100%;
+	width: 200px;
+	background-color: #1C1E21;
+	transform: translateX(200px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 20px;
+}
+	.burger_menu .link {
+		margin: 15px 0 0 0;
+	}
+#burger_b {
+	display: none;
+}
 
 
 .main {
@@ -79,20 +125,31 @@ img {
 	display: none;
 }
 
-.div_text {
-	margin: 20px 0;
-	font-family: Russo One;
-	font-size: 35px;
-	text-align: center;
-}
-	.div_text.mid {
-		margin: 20px -15% 20px 0;
-	}
-
 .item {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+.item.chb {
+	margin: 20px 0 50px 0;
+}
+
+.section_text {
+	text-align: center;
+	height: 80px;
+	margin-bottom: 50px;
+	font-family: Jost;
+	font-size: 30px;
+	background-color: #1C1E21;
+	box-shadow: rgb(0, 0, 0, 0.4) 0px 0px 25px;
+	line-height: 80px;
+}
+
+#projects, #about {
+	position: relative;
+	top: -160px;
+	height: 80px;
+	visibility: hidden;
 }
 
 .mlink {
@@ -115,26 +172,6 @@ img {
 		font-size: 25px;
 	}
 
-.llink {
-	height: 300px;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 15px;
-	background-color: #282D30;
-	background-position: -30px 10px;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-	.llink:hover {
-		background-color: #1C1E21;
-	}
-	.llink .text {
-		font-family: Russo One;
-		font-size: 48px;
-	}
-
 
 .info {
 	background-position: center;
@@ -150,7 +187,7 @@ img {
 		height: 560px;
 		margin: 80px 40px 0 0;
 	}
-		.info .icon.game {
+		.info .icon.project {
 			height: 400px;
 			width: auto;
 		}
@@ -158,7 +195,7 @@ img {
 	.info .panel {
 		margin: 80px 40px 0 0;
 		background-color: #141719;
-		padding: 30px;
+		padding: 20px 30px 30px 30px;
 		border-radius: 20px;
 		box-shadow: rgb(0, 0, 0, 0.4) 0 10px 25px 5px;
 	}
@@ -171,61 +208,56 @@ img {
 	}
 
 
-.games_discord {
+.discord_s {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
-	margin: 0 -80px;
+	margin-bottom: 50px;
 }
 
-.our_games, .our_discord {
-	margin: 0 20px;
-	min-width: 400px;
+.about, .projects {
+	padding-right: 10%;
+	margin: 0 120px;
 }
-
-
-.about_us, .games {
-	padding-right: 15%;
-}
-.bio, .game {
+.bio, .project {
 	border-radius: 20px;
 	background-color: #1C1E21;
 	display: flex;
 	width: 100%;
 }
-	.bio.right, .game.right {
+	.bio.right, .project.right {
 		margin: 30px 0 50px 15%;
 	}
-	.bio.left, .game.left {
+	.bio.left, .project.left {
 		margin: 30px 15% 50px 0;
 	}
 	.bio.right {
 		justify-content: right;
 		text-align: right;
 	}
-	.bio .avatar, .game .icon {
+	.bio .avatar, .project .icon {
 		margin: 20px;
 		height: 240px;
 		background-color: #141719;
 		border-radius: 10px;
 	}
-	.bio .des, .game .des {
+	.bio .des, .project .des {
 		margin: 20px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 	}
-	.bio .title, .game .title {
+	.bio .title, .project .title {
 		font-size: 30px;
 	}
-	.bio .text, .game .text {
+	.bio .text, .project .text {
 		margin-top: 10px;
 	}
 	.bio .links {
 		margin-top: 20px;
 		display: flex;
 	}
-	.bio .link, .game .link {
+	.bio .link, .project .link {
 		padding: 8px 10px;
 		display: flex;
 		align-items: center;
@@ -234,20 +266,20 @@ img {
 	.bio .link {
 		margin-right: 10px;
 	}
-	.game .link {
+	.project .link {
 		margin: 20px auto 0 0;
 		background-color: #3A4246;
 	}
-		.game .link:hover {
+		.project .link:hover {
 			background-color: #282D30;
 		}
-		.bio .link .icon, .game .link .icon {
+		.bio .link .icon, .project .link .icon {
 			height: 20px;
 			border-radius: 0;
 			margin: 0;
 			background-color: initial;
 		}
-		.bio .link .text, .game .link .text {
+		.bio .link .text, .project .link .text {
 			margin: 0 0 0 5px;
 			font-size: 18px;
 		}
@@ -278,13 +310,13 @@ img {
 
 
 
-.game_des {
-	margin: 20px 0;
+.project_des {
+	margin: 50px 120px;
 	border-radius: 20px;
 	background-color: #1C1E21;
 	padding: 10px 20px;
 }
-	.game_des .text {
+	.project_des .text {
 		margin: 10px 0;
 	}
 .mlink .size {
@@ -304,6 +336,7 @@ img {
 	align-items: center;
 	background-color: #1C1E21;
 	font-size: 20px;
+	box-shadow: rgb(0, 0, 0, 0.4) 0px 0px 25px;
 }
 	.footer .links {
 		width: 150px;
@@ -330,7 +363,7 @@ img {
 
 
 
-.game_screenshots {
+.project_screenshots {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -376,12 +409,12 @@ img {
 	display: flex;
 	justify-content: center;
 	position: relative;
-	margin: 10px 15px 0 15px;
+	margin: 10px 15px 50px 15px;
 }
 .sc_nav_bar {
 	width: 50px;
 	height: 20px;
-	margin: 5px;
+	margin: 0 5px;
 	cursor: pointer;
 	background-color: #282D30;
 	border-radius: 5px;
@@ -416,7 +449,7 @@ input[name="r"] {
 	z-index: 4;
 	max-width: 95%;
 	max-height: 95%;
-	transform: scale(0.75);
+	transform: scale(0.9);
 }
 .gallery.opened .gallery_img {
 	transform: scale(1);
@@ -482,10 +515,6 @@ input[name="r"] {
 		font-size: 16px;
 	}
 
-	.page {
-		padding: 0 22px;
-	}
-
 	.mb {
 		display: block;
 	}
@@ -495,7 +524,8 @@ input[name="r"] {
 
 	.header {
 		padding: 15px;
-		margin: 0 -20px;
+		justify-content: space-between;
+		margin-right: -15px;
 	}
 		.header .logo .icon {
 			height: 40px;
@@ -508,16 +538,13 @@ input[name="r"] {
 			padding: 8px 12px;
 		}
 
-	.div_text {
-		margin: 15px 0;
-		font-size: 25px;
+	.section_text {
+		margin-bottom: 15px;
 	}
-		.div_text.mid {
-			margin: 20px 0;
-		}
 
 	.mlink {
 		padding: 8px;
+		margin-bottom: 15px;
 	}
 		.mlink .icon {
 			height: 25px;
@@ -525,11 +552,6 @@ input[name="r"] {
 		.mlink .text {
 			font-size: 20px;
 		}
-
-	.llink {
-		height: 200px;
-		background-position: -30px 0px;
-	}
 
 	.info {
 		flex-direction: column;
@@ -540,53 +562,53 @@ input[name="r"] {
 			margin: 70px 0 0 0;
 		}
 		.info .panel {
-			margin: 0 20px 40px 20px;
+			margin: 0 40px 40px 40px;
 			text-align: center;
+			padding: 15px;
 		}
 		.info .title {
-			font-size: 30px;
+			font-size: 26px;
+			line-height: 30px;
 		}
 		.info .text {
-			font-size: 20px;
+			font-size: 18px;
 		}
 
-	.games_discord {
-		flex-direction: column;
-	}
-
-	.our_games, .our_discord {
+	.discord_s {
 		min-width: 300px;
+		margin-bottom: 15px;
 	}
 
-	.about_us, .games {
+	.about, .projects {
 		padding: 0;
+		margin: 0 20px;
 	}
 
-	.bio, .game {
+	.bio, .project {
 		margin: 15px 0;
 		flex-direction: column;
 	}
-		.bio.right, .game.right {
+		.bio.right, .project.right {
 			margin: 15px 0;
 		}
-		.bio.left, .game.left {
+		.bio.left, .project.left {
 			margin: 15px 0;
 		}
-		.bio.right, .game.right {
+		.bio.right, .project.right {
 			justify-content: left;
 			text-align: left;
 		}
-		.bio .avatar, .game .icon {
+		.bio .avatar, .project .icon {
 			margin: 20px 40px;
 			height: auto;
 		}
-		.bio .des, .game .des {
+		.bio .des, .project .des {
 			margin: 0 20px 20px 20px;
 		}
-		.bio .title, .game .title {
+		.bio .title, .project .title {
 			font-size: 25px;
 		}
-		.bio .text, .game .text {
+		.bio .text, .project .text {
 			margin-top: 8px;
 		}
 		.bio .links {
@@ -604,11 +626,14 @@ input[name="r"] {
 			.bio .link .icon {
 				height: 18px;
 			}
+		.project_des {
+			margin: 20px;
+		}
 
-	.info .icon.game {
+	.info .icon.project {
 		height: 250px;
 	}
-	.lgame {
+	.lproject {
 		margin-bottom: 20px;
 	}
 	.lchangelog {
@@ -616,8 +641,7 @@ input[name="r"] {
 	}
 
 	.footer {
-		margin: auto -20px 0 -20px;
-		padding: 0 20px;
+		padding: 0 140px;
 	}
 		.footer .ktc_smoke {
 			height: 100px;
@@ -633,6 +657,9 @@ input[name="r"] {
 	}
 	.item {
 		flex-direction: column;
+	}
+	.item.chb {
+		margin: 20px 0 0 0;
 	}
 	.changelog .panel {
 		margin: 110px 30px 70px 30px;
