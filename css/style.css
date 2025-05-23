@@ -18,6 +18,11 @@ img {
 	user-select: none;
 }
 
+::selection {
+	background: #556166;
+	color: black;
+}
+
 .body {
 	background-color: #141719;
 }
