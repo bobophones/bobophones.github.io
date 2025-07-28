@@ -559,6 +559,25 @@ input[name="r"] {
 		margin-top: 10px;
 	}
 
+.dream, .not_found {
+	margin: 50px 120px;
+	border-radius: 20px;
+	background: linear-gradient(135deg, #1C1E2184, transparent);
+	padding: 30px 40px;
+}
+	.dream .title, .not_found .title {
+		font-size: 35px;
+	}
+	.dream .text {
+		margin-top: 15px;
+	}
+	.dream.hidden {
+		display: none;
+	}
+.not_found {
+	text-align: center;
+}
+
 
 @media (max-width: 720px) {
 	* {

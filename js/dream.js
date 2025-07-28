@@ -1,28 +1,29 @@
 window.addEventListener('DOMContentLoaded', loadDream);
 
 async function loadDream() {
-    const _params = new URLSearchParams(window.location.search);
-    const _id = _params.get('id');
-    if (!_id) {
-        showNotFound();
-        return;
-    }
+	const _params = new URLSearchParams(window.location.search);
+	const _id = _params.get('id');
+	if (!_id) {
+		showNotFound();
+		return;
+	}
 
-    try {
-        const _res = await fetch(`/dreams/${decodeURIComponent(_id)}.json`);
-        if (!_res.ok) throw new Error('Не найдено');
+	try {
+		const _res = await fetch(`dreams/${decodeURIComponent(_id)}.json`);
+		if (!_res.ok) throw new Error('Не найдено');
 
-        const _dream = await _res.json();
-        document.getElementById('dream-title').textContent = _dream.title;
-        document.getElementById('dream-date').textContent = _dream.date;
-        document.getElementById('dream-text').textContent = _dream.text;
+		const _dream = await _res.json();
+		document.getElementById('title').textContent = _dream.title;
+		document.getElementById('date').textContent = _dream.date;
+		document.getElementById('text').textContent = _dream.text;
 
-        document.title = _dream.title;
-    } catch (e) {
-        showNotFound();
-    }
-}
+		document.title = _dream.title;
+	} catch (e) {
+		showNotFound();
+	}
+};
 
 function showNotFound() {
-    document.body.innerHTML = '<p>Сон не найден.</p>';
-}
+	document.getElementById('dream').classList.add("hidden");
+	document.getElementById('not_found').classList.remove("hidden");
+};
