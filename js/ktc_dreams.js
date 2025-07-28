@@ -36,7 +36,7 @@ async function loadMoreDreams() {
 				<div class="date"> ${_dream.date} </div>
 			</a>
 		`;
-		_dreams_list.appendChild(card);
+		_dreams_list.appendChild(_card);
 	}
 	_loaded_count += _next_batch.length;
 }
