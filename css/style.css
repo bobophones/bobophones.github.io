@@ -576,6 +576,7 @@ input[name="r"] {
 }
 	.dream .title, .not_found .title {
 		font-size: 35px;
+		line-height: 35px;
 	}
 	.dream .text {
 		margin-top: 15px;
@@ -750,4 +751,16 @@ input[name="r"] {
 	.changelog .text {
 		margin-top: 9px;
 	}
+
+	.dream, .not_found {
+		margin: 20px 50px;
+		border-radius: 20px;
+		background: linear-gradient(135deg, #1C1E2184, transparent);
+		padding: 20px 30px;
+	}
+
+		.dream .title, .not_found .title {
+			font-size: 25px;
+			line-height: 25px;
+		}
 }
