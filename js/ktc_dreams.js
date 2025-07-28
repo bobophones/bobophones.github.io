@@ -1,15 +1,19 @@
-window.addEventListener("DOMContentLoaded", () => {
-	const _dreams_list = document.getElementById('dreams');
-	let _loaded_count = 0;
-	const _batch_size = 5;
-	let _dreams_i = [];
-
+async function init() {
 	const _res = await fetch('dreams/index.json');
 	_dreams_i = await _res.json();
 
 	loadMoreDreams();
 
 	window.addEventListener('scroll', onScroll);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+	const _dreams_list = document.getElementById('dreams');
+	let _loaded_count = 0;
+	const _batch_size = 5;
+	let _dreams_i = [];
+
+	init();
 
 	function onScroll() {
 		if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
