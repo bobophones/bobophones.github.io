@@ -577,6 +577,10 @@ input[name="r"] {
 .not_found {
 	text-align: center;
 }
+	.not_found.hidden {
+		display: none;
+	}
+
 
 
 @media (max-width: 720px) {
