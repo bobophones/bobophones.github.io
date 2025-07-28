@@ -533,6 +533,7 @@ input[name="r"] {
 .dreams {
 	padding: 30px;
 	display: flex;
+	align-items: center;
 	flex-wrap: wrap;
 	gap: 20px;
 }
