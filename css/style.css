@@ -291,6 +291,14 @@ img {
 			margin: 0 0 0 5px;
 			font-size: 18px;
 		}
+	.bio .link {
+		outline: 3px solid #1C1E21;
+		background: linear-gradient(135deg, transparent, #1C1E2184);
+		overflow: hidden;
+	}
+		.bio .link:hover {
+			background-color: #1C1E21;
+		}
 	.bio .link.youtube {
 		outline: 3px solid red;
 		background: linear-gradient(135deg, transparent, red);

@@ -19,7 +19,7 @@ async function loadDream() {
 		document.title = _dream.title;
 		document.getElementById('dream').classList.remove("hidden");
 	} catch (e) {
-		showNotFound();
+		
 	}
 };
 
