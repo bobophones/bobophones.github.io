@@ -1,4 +1,4 @@
-const _dreams_list = document.getElementsByClassName('dreams');
+const _dreams_list = document.getElementById('dreams');
 let _loaded_count = 0;
 const _batch_size = 5;
 let _dreams_i = [];
