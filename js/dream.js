@@ -10,19 +10,13 @@ async function loadDream() {
 
 	try {
 		const _res = await fetch(`../dreams/${decodeURIComponent(_id)}.json`);
-		if (!_res.ok) {
-			throw new Error('Не найдено');
-		}
-		console.log('1');
+		if (!_res.ok) throw new Error('Не найдено');
 		const _dream = await _res.json();
 		document.getElementById('title').textContent = _dream.title;
 		document.getElementById('date').textContent = _dream.date;
 		document.getElementById('text').textContent = _dream.text;
-		console.log('2');
 		document.title = _dream.title;
-		console.log('3');
 		document.getElementById('dream').classList.remove("hidden");
-		console.log('4');
 	} catch (e) {
 		showNotFound();
 	}
