@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 	<link rel="icon" href="../img/icon.svg" type="image/png">
 	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/burger.js"></script>
+	<script src="../js/gallery.js"></script>
+	<script src="../js/changelog.js"></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -301,46 +304,6 @@
 			<img class="ktc_smoke" src="../img/ktc_smoke.gif">
 			<div class="copyright"> © 2025 Bobophone Studios </div>
 		</footer>
-
-
-		<script>
-            function close_burger() {
-                document.getElementById("burger").classList.remove("opened");
-            }
-
-            document.getElementById("burger_b").addEventListener("click", function () {
-                document.getElementById("burger").classList.add("opened");
-            })
-            document.querySelector("#burger .burger_menu").addEventListener("click", event => {
-                event._click_on_panel = true;
-            })
-            document.getElementById("burger").addEventListener("click", event => {
-                if (event._click_on_panel) return;
-                event.currentTarget.classList.remove("opened");
-			})
-
-			function open_gallery(img) {
-				document.getElementById("gallery").classList.add("opened");
-				document.getElementById("gallery_img").src = img.src;
-			}
-			function close_gallery() {
-				document.getElementById("gallery").classList.remove("opened");
-			}
-
-			document.getElementById("changelog_b").addEventListener("click", function () {
-				document.getElementById("changelog").classList.add("opened");
-			})
-			function close_changelog() {
-				document.getElementById("changelog").classList.remove("opened");
-			}
-			document.querySelector("#changelog .panel").addEventListener("click", event => {
-				event._click_on_panel = true;
-			})
-			document.getElementById("changelog").addEventListener("click", event => {
-				if (event._click_on_panel) return;
-				event.currentTarget.classList.remove("opened");
-			})
-		</script>
 	</div>
 </body>
 </html>

@@ -24,7 +24,11 @@ img {
 }
 
 .body {
-	background-color: #141719;
+	background: linear-gradient(45deg, black, #0b1822);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
 }
 
 .page {
@@ -48,7 +52,7 @@ img {
 	display: flex;
 	align-items: center;
 	padding: 15px 30px;
-	background-color: #1C1E21;
+	background: linear-gradient(135deg, #1C1E21A1, #1C1E213C);
 	box-shadow: rgb(0, 0, 0, 0.4) 0px 0px 25px;
 }
 
@@ -69,10 +73,10 @@ img {
 	.header .link, .burger_menu .link {
 		margin-left: 30px;
 		padding: 10px 20px;
+		border-radius: 15px;
 	}
 		.header .link:hover, .burger_menu .link:hover {
-			background-color: #141719;
-			border-radius: 15px;
+			background-color: #1C1E21;
 		}
 	.header .burger_icon {
 		margin-right: 30px;
@@ -145,7 +149,7 @@ img {
 	margin-bottom: 50px;
 	font-family: Jost;
 	font-size: 30px;
-	background-color: #1C1E21;
+	background: linear-gradient(135deg, #1C1E21A1, #1C1E213C);
 	box-shadow: rgb(0, 0, 0, 0.4) 0px 0px 25px;
 	line-height: 80px;
 }
@@ -161,9 +165,11 @@ img {
 	display: flex;
 	align-items: center;
 	padding: 10px;
-	background-color: #282D30;
-	border-radius: 15px;
 	margin: 0 10px;
+	outline: 5px solid #1C1E21;
+	border-radius: 20px;
+	background: linear-gradient(135deg, transparent, #1C1E2184);
+	overflow: hidden;
 }
 	.mlink:hover {
 		background-color: #1C1E21;
@@ -199,7 +205,7 @@ img {
 
 	.info .panel {
 		margin: 80px 40px 0 0;
-		background-color: #141719;
+		background: linear-gradient(135deg, #1C1E2184, transparent);
 		padding: 20px 30px 30px 30px;
 		border-radius: 20px;
 		box-shadow: rgb(0, 0, 0, 0.4) 0 10px 25px 5px;
@@ -226,7 +232,7 @@ img {
 }
 .bio, .project {
 	border-radius: 20px;
-	background-color: #1C1E21;
+	background: linear-gradient(135deg, transparent, #1C1E2184);
 	display: flex;
 	width: 100%;
 }
@@ -235,10 +241,6 @@ img {
 	}
 	.bio.left, .project.left {
 		margin: 30px 15% 50px 0;
-	}
-	.bio.right {
-		justify-content: right;
-		text-align: right;
 	}
 	.bio .avatar, .project .icon {
 		margin: 20px;
@@ -261,6 +263,8 @@ img {
 	.bio .links {
 		margin-top: 20px;
 		display: flex;
+		flex-wrap: wrap;
+		gap: 13px;
 	}
 	.bio .link, .project .link {
 		padding: 8px 10px;
@@ -268,15 +272,14 @@ img {
 		align-items: center;
 		border-radius: 10px;
 	}
-	.bio .link {
-		margin-right: 10px;
-	}
 	.project .link {
 		margin: 20px auto 0 0;
-		background-color: #3A4246;
+		outline: 3px solid #1C1E21;
+		background: linear-gradient(135deg, transparent, #1C1E2184);
+		overflow: hidden;
 	}
 		.project .link:hover {
-			background-color: #282D30;
+			background-color: #1C1E21;
 		}
 		.bio .link .icon, .project .link .icon {
 			height: 20px;
@@ -288,37 +291,45 @@ img {
 			margin: 0 0 0 5px;
 			font-size: 18px;
 		}
-		.bio .link.youtube {
+	.bio .link.youtube {
+		outline: 3px solid red;
+		background: linear-gradient(135deg, transparent, red);
+		overflow: hidden;
+	}
+		.bio .link.youtube:hover {
 			background-color: red;
 		}
-			.bio .link.youtube:hover {
-				background-color: #B20312;
-			}
-		.bio .link.gamejolt {
+	.bio .link.gamejolt {
+		outline: 3px solid #2F7F6F;
+		background: linear-gradient(135deg, transparent, #2F7F6F);
+		overflow: hidden;
+	}
+		.bio .link.gamejolt:hover {
 			background-color: #2F7F6F;
 		}
-			.bio .link.gamejolt:hover {
-				background-color: #0F5B52;
-			}
-		.bio .link.itch_io {
+	.bio .link.itch_io {
+		outline: 3px solid #FF5F5F;
+		background: linear-gradient(135deg, transparent, #FF5F5F);
+		overflow: hidden;
+	}
+		.bio .link.itch_io:hover {
 			background-color: #FF5F5F;
 		}
-			.bio .link.itch_io:hover {
-				background-color: #CC434E;
-			}
-		.bio .link.discord {
+	.bio .link.discord {
+		outline: 3px solid #5662F6;
+		background: linear-gradient(135deg, transparent, #5662F6);
+		overflow: hidden;
+	}
+		.bio .link.discord:hover {
 			background-color: #5662F6;
 		}
-			.bio .link.discord:hover {
-				background-color: #4242E5;
-			}
 
 
 
 .project_des {
 	margin: 50px 120px;
 	border-radius: 20px;
-	background-color: #1C1E21;
+	background: linear-gradient(135deg, #1C1E2184, transparent);
 	padding: 10px 20px;
 }
 	.project_des .text {
@@ -339,7 +350,7 @@ img {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	background-color: #1C1E21;
+	background: linear-gradient(135deg, #1C1E21A1, #1C1E213C);
 	font-size: 20px;
 	box-shadow: rgb(0, 0, 0, 0.4) 0px 0px 25px;
 }
@@ -421,11 +432,11 @@ img {
 	height: 20px;
 	margin: 0 5px;
 	cursor: pointer;
-	background-color: #282D30;
+	background-color: #1C1E21;
 	border-radius: 5px;
 }
 	.sc_nav_bar:hover {
-		background-color: #1C1E21;
+		background-color: #1C1E21A1;
 	}
 input[name="r"] {
 	position: absolute;
@@ -487,14 +498,18 @@ input[name="r"] {
 }
 
 .changelog .panel {
-	background-color: #1C1E21;
+	background: linear-gradient(45deg, black, #0b1822);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
 	border-radius: 20px;
 	margin: 120px 100px 80px 100px;
 	min-width: 400px;
 }
 
 .changelog .content {
-	background: #141719;
+	background: linear-gradient(135deg, #1C1E2184, transparent);
 	border-radius: 20px;
 	padding: 15px 20px;
 	margin: 20px;
@@ -513,6 +528,36 @@ input[name="r"] {
 .changelog .text {
 	margin-top: 10px;
 }
+
+
+.dreams {
+	padding: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.dream_p {
+	outline: 5px solid #1C1E21;
+	border-radius: 20px;
+	background: linear-gradient(135deg, transparent, #1C1E2184);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+
+	.dream_p:hover {
+		background-color: #1C1E21;
+	}
+
+	.dream_p .title {
+		font-size: 30px;
+	}
+
+	.dream_p .date {
+		margin-top: 10px;
+	}
 
 
 @media (max-width: 720px) {
@@ -617,12 +662,9 @@ input[name="r"] {
 			margin-top: 8px;
 		}
 		.bio .links {
-			flex-direction: column;
-			align-items: flex-start;
-			margin-top: 8px;
+			margin-top: 10px;
 		}
 		.bio .link {
-			margin: 8px 0 0 0;
 			padding: 6px 8px;
 		}
 			.bio .link .text {

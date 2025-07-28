@@ -32,9 +32,13 @@
 			-ms-user-select: none;
 		}
 
-		.body {
-			background-color: #141719;
-		}
+        .body {
+            background: linear-gradient(45deg, black, #0b1822);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
 
 		.page {
 			display: flex;
@@ -56,19 +60,23 @@
 			.p404 .title {
 				font-family: Jost;
 				font-size: 45px;
+				line-height: 45px;
+				margin-bottom: 10px;
 			}
 
 			.p404 .text {
 				font-size: 25px;
 			}
 
-			.p404 .link {
-				font-size: 25px;
-				margin-top: 15px;
-				padding: 10px 20px;
-				background-color: #282D30;
-				border-radius: 15px;
-			}
+            .p404 .link {
+                font-size: 25px;
+                margin-top: 15px;
+                padding: 10px 20px;
+                border-radius: 15px;
+                outline: 3px solid #1C1E21;
+                background: linear-gradient(135deg, transparent, #1C1E2184);
+                overflow: hidden;
+            }
 
 				.p404 .link:hover {
 					background-color: #1C1E21;
@@ -82,7 +90,7 @@
             display: flex;
             align-items: center;
             padding: 15px 30px;
-            background-color: #1C1E21;
+            background: linear-gradient(135deg, #1C1E21A1, #1C1E213C);
             margin: 0 -120px;
             box-shadow: rgb(0, 0, 0, 0.4) 0px 0px 25px;
         }

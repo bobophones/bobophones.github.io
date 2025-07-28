@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 	<link rel="icon" href="../img/icon.svg" type="image/png">
 	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/burger.js"></script>
+	<script src="../js/gallery.js"></script>
+	<script src="../js/changelog.js"></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,7 +65,7 @@
 					Окунитесь в мир, полный мифических существ и величественных сооружений, в KTC RPG. Здесь вы столкнетесь с множеством новых мобов, таких как гоблины, лесные духи, красные панды и многие другие, каждый из которых обладает уникальным поведением и способностями
 				</div>
 				<div class="text">
-					Версия: 0.0.1 <br>
+					Версия: 0.1 <br>
 					Дата обновления: - <br>
 					Дата выхода: -
 				</div>
@@ -112,7 +115,7 @@
 				<div class="panel">
 					<div class="title"> Изменения </div>
 					<div class="content">
-						<div class="ver"> 0.0.1 </div>
+						<div class="ver"> 0.1 </div>
 						<div class="date"> - </div>
 						<div class="text">
 							• здарова
@@ -131,46 +134,6 @@
 			<img class="ktc_smoke" src="../img/ktc_smoke.gif">
 			<div class="copyright"> © 2025 Bobophone Studios </div>
 		</footer>
-
-
-		<script>
-            function close_burger() {
-                document.getElementById("burger").classList.remove("opened");
-            }
-
-            document.getElementById("burger_b").addEventListener("click", function () {
-                document.getElementById("burger").classList.add("opened");
-            })
-            document.querySelector("#burger .burger_menu").addEventListener("click", event => {
-                event._click_on_panel = true;
-            })
-            document.getElementById("burger").addEventListener("click", event => {
-                if (event._click_on_panel) return;
-                event.currentTarget.classList.remove("opened");
-			})
-
-			function open_gallery(img) {
-				document.getElementById("gallery").classList.add("opened");
-				document.getElementById("gallery_img").src = img.src;
-			}
-			function close_gallery() {
-				document.getElementById("gallery").classList.remove("opened");
-			}
-
-			document.getElementById("changelog_b").addEventListener("click", function () {
-				document.getElementById("changelog").classList.add("opened");
-			})
-			function close_changelog() {
-				document.getElementById("changelog").classList.remove("opened");
-			}
-			document.querySelector("#changelog .panel").addEventListener("click", event => {
-				event._click_on_panel = true;
-			})
-			document.getElementById("changelog").addEventListener("click", event => {
-				if (event._click_on_panel) return;
-				event.currentTarget.classList.remove("opened");
-			})
-		</script>
 	</div>
 </body>
 </html>
