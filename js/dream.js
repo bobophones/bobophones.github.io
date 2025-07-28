@@ -9,8 +9,8 @@ async function loadDream() {
 	}
 
 	try {
-		const _res = await fetch(`dreams/${decodeURIComponent(_id)}.json`);
-		if (!_res.ok) throw new Error('Не найдено');
+		const _res = await fetch(`../dreams/${decodeURIComponent(_id)}.json`);
+		if (!_res.ok) throw new Error('РќРµ РЅР°Р№РґРµРЅРѕ');
 
 		const _dream = await _res.json();
 		document.getElementById('title').textContent = _dream.title;
