@@ -16,14 +16,13 @@ async function loadDream() {
 		document.getElementById('title').textContent = _dream.title;
 		document.getElementById('date').textContent = _dream.date;
 		document.getElementById('text').textContent = _dream.text;
-
 		document.title = _dream.title;
+		document.getElementById('dream').classList.remove("hidden");
 	} catch (e) {
 		showNotFound();
 	}
 };
 
 function showNotFound() {
-	document.getElementById('dream').classList.add("hidden");
 	document.getElementById('not_found').classList.remove("hidden");
 };
