@@ -540,12 +540,19 @@ input[name="r"] {
 
 .dreams {
 	padding: 30px;
-	min-height: calc(100vh - 260px) ;
+	min-height: calc(100vh - 330px) ;
 	display: flex;
 	justify-content: center;
 	align-content: center;
 	flex-wrap: wrap;
 	gap: 20px;
+}
+.dreams_t {
+	font-size: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70px;
 }
 
 .dream_p {
@@ -594,9 +601,14 @@ input[name="r"] {
 		font-size: 16px;
 	}
 
+	.main {
+		margin-top: 70px;
+	}
+
 	.mb {
 		display: block;
 	}
+
 	.pc {
 		display: none;
 	}
@@ -607,13 +619,16 @@ input[name="r"] {
 		justify-content: space-between;
 		height: 40px;
 	}
+
 		.header .logo .icon {
 			height: 40px;
 		}
+
 		.header .logo .text {
 			max-width: 100px;
 			line-height: 18px;
 		}
+
 		.header .link {
 			margin-left: 10px;
 			padding: 8px 12px;
@@ -627,9 +642,11 @@ input[name="r"] {
 		padding: 8px;
 		margin-bottom: 15px;
 	}
+
 		.mlink .icon {
 			height: 25px;
 		}
+
 		.mlink .text {
 			font-size: 20px;
 		}
@@ -638,19 +655,23 @@ input[name="r"] {
 		flex-direction: column;
 		margin: -80px -20px 0 -20px;
 	}
+
 		.info .icon {
 			height: 300px;
 			margin: 70px 0 0 0;
 		}
+
 		.info .panel {
 			margin: 0 40px 40px 40px;
 			text-align: center;
 			padding: 15px;
 		}
+
 		.info .title {
 			font-size: 26px;
 			line-height: 30px;
 		}
+
 		.info .text {
 			font-size: 18px;
 		}
@@ -669,51 +690,65 @@ input[name="r"] {
 		margin: 15px 0;
 		flex-direction: column;
 	}
+
 		.bio.right, .project.right {
 			margin: 15px 0;
 		}
+
 		.bio.left, .project.left {
 			margin: 15px 0;
 		}
+
 		.bio.right, .project.right {
 			justify-content: left;
 			text-align: left;
 		}
+
 		.bio .avatar, .project .icon {
 			margin: 20px 40px;
 			height: auto;
 		}
+
 		.bio .des, .project .des {
 			margin: 0 20px 20px 20px;
 		}
+
 		.bio .title, .project .title {
 			font-size: 25px;
 		}
+
 		.bio .text, .project .text {
 			margin-top: 8px;
 		}
+
 		.bio .links {
 			margin-top: 10px;
 		}
+
 		.bio .link {
 			padding: 6px 8px;
 		}
+
 			.bio .link .text {
 				font-size: 15px;
 			}
+
 			.bio .link .icon {
 				height: 18px;
 			}
-		.project_des {
-			margin: 20px;
-		}
+
+	.project_des {
+		margin: 20px;
+	}
 
 	.info .icon.project {
 		height: 250px;
 	}
+
 	.lproject {
 		margin-bottom: 20px;
 	}
+
 	.lchangelog {
 		margin-top: -20px;
 	}
@@ -721,6 +756,7 @@ input[name="r"] {
 	.footer {
 		padding: 0 140px;
 	}
+
 		.footer .ktc_smoke {
 			height: 100px;
 		}
@@ -729,25 +765,39 @@ input[name="r"] {
 		width: 320px;
 		height: 180px;
 	}
+
 	.sc_nav_bar {
 		width: 40px;
 		height: 18px;
 	}
+
 	.item {
 		flex-direction: column;
 	}
-	.item.chb {
-		margin: 20px 0 0 0;
-	}
+
+		.item.chb {
+			margin: 20px 0 0 0;
+		}
+
 	.changelog .panel {
 		margin: 110px 30px 70px 30px;
 		min-width: 300px;
 	}
+
 	.changelog .ver {
 		font-size: 25px;
 	}
+
 	.changelog .text {
 		margin-top: 9px;
+	}
+
+	.dreams {
+		min-height: calc(100vh - 280px);
+	}
+	.dreams_t {
+		height: 50px;
+		font-size: 30px;
 	}
 
 	.dream_p {
