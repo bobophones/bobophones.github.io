@@ -47,15 +47,14 @@ img {
 
 .header {
 	position: fixed;
-	width: 100%;
+	width: calc(100% - 60px);
 	height: 50px;
 	display: flex;
 	align-items: center;
 	padding: 15px 30px;
-	background: linear-gradient(135deg, #1C1E21A1, #1C1E213C);
+	background: linear-gradient(135deg, #1C1E21C1, #1C1E213C);
 	box-shadow: rgb(0, 0, 0, 0.4) 0px 0px 25px;
 }
-
 	.header .logo {
 		display: flex;
 		align-items: center;
@@ -74,12 +73,13 @@ img {
 		margin-left: 30px;
 		padding: 10px 20px;
 		border-radius: 15px;
+		background-color: #1C1E21;
+		overflow: hidden;
 	}
 		.header .link:hover, .burger_menu .link:hover {
-			background-color: #1C1E21;
+			background-color: #141619;
 		}
 	.header .burger_icon {
-		margin-right: 30px;
 		height: 30px;
 	}
 		.header .burger_icon:hover {
@@ -111,7 +111,7 @@ img {
 	position: fixed;
 	height: 100%;
 	width: 200px;
-	background-color: #1C1E21;
+	background: linear-gradient(135deg, #1C1E21C1, #1C1E213C);
 	transform: translateX(200px);
 	display: flex;
 	flex-direction: column;
@@ -607,13 +607,16 @@ input[name="r"] {
 
 	.header {
 		padding: 15px;
-		margin-right: -15px;
+		width: calc(100% - 30px);
+		justify-content: space-between;
+		height: 40px;
 	}
 		.header .logo .icon {
 			height: 40px;
 		}
 		.header .logo .text {
 			max-width: 100px;
+			line-height: 18px;
 		}
 		.header .link {
 			margin-left: 10px;
