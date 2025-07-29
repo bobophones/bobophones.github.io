@@ -11,7 +11,7 @@ async function loadDream() {
 	try {
 		const _res = await fetch(`../dreams/${decodeURIComponent(_id)}.json`);
 		if (!_res.ok) {
-			throw new Error('Не найдено');
+			throw new Error('ГЌГҐ Г­Г Г©Г¤ГҐГ­Г®');
 		}
 		const _dream = await _res.json();
 		document.getElementById('title').textContent = _dream.title;
@@ -19,10 +19,6 @@ async function loadDream() {
 		document.getElementById('text').innerHTML = _dream.text;
 		document.title = _dream.title;
 		document.getElementById('dream').classList.remove("hidden");
-
-		const _title_tag = document.querySelector('meta[property="og:title"]');
-		if (_title_tag)
-			_title_tag.setAttribute('content', _dream.title);
 	} catch (e) {
 		showNotFound();
 	}
