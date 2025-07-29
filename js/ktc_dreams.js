@@ -2,6 +2,7 @@ let _dreams_list;
 let _loaded_count = 0;
 const _batch_size = 15;
 let _dreams_i = [];
+let _loaded_dreams = [];
 
 async function init() {
 	const _res = await fetch('dreams/index.json');
@@ -28,6 +29,9 @@ async function loadMoreDreams() {
 
 	const _next_batch = _dreams_i.slice(_loaded_count, _loaded_count + _batch_size);
 	for (const i of _next_batch) {
+		console.log(i);
+		if (_loaded_dreams.indexOf(i) !== -1) continue;
+		_loaded_dreams.push(i);
 		const _res = await fetch(`dreams/${i}.json`);
 		if (!_res.ok) continue;
 
