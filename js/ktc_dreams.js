@@ -1,6 +1,6 @@
 let _dreams_list;
 let _loaded_count = 0;
-const _batch_size = 10;
+const _batch_size = 15;
 let _dreams_i = [];
 
 async function init() {
