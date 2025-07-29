@@ -540,8 +540,10 @@ input[name="r"] {
 
 .dreams {
 	padding: 30px;
+	min-height: calc(100vh - 260px) ;
 	display: flex;
 	justify-content: center;
+	align-content: center;
 	flex-wrap: wrap;
 	gap: 20px;
 }
