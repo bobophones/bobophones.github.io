@@ -752,7 +752,7 @@ input[name="r"] {
 	}
 
 	.dream, .not_found {
-		margin: 20px 50px;
+		margin: 20px 30px;
 		border-radius: 20px;
 		background: linear-gradient(135deg, #1C1E2184, transparent);
 		padding: 20px 20px;
