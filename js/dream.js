@@ -1,6 +1,7 @@
 const _tag_text = {
+	"abs": "Абсурдный",
 	"sus": "Подозрительный",
-	"prophetic": "Вещий"
+	"prop": "Вещий"
 };
 
 window.addEventListener('DOMContentLoaded', loadDream);
