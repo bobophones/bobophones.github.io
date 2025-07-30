@@ -1,3 +1,8 @@
+const _tag_text = {
+	"sus": "Подозрительный",
+	"prophetic": "Вещий"
+};
+
 window.addEventListener('DOMContentLoaded', loadDream);
 
 async function loadDream() {
@@ -10,12 +15,16 @@ async function loadDream() {
 
 	try {
 		const _res = await fetch(`../dreams/${decodeURIComponent(_id)}.json`);
-		if (!_res.ok) {
-			throw new Error('Íå íàéäåíî');
-		}
+		if (!_res.ok) throw new Error('Не найдено');
+
 		const _dream = await _res.json();
 		document.getElementById('title').textContent = _dream.title;
 		document.getElementById('date').textContent = _dream.date;
+		if ("tags" in _dream) {
+			document.getElementById('tags').innerHTML = _dream.tags.map(_tag => `
+				<div class="tag ${_tag}"> ${_tag_text[_tag] || _tag} </div>
+			`).join("")
+		}
 		document.getElementById('text').innerHTML = _dream.text;
 		document.title = _dream.title;
 		document.getElementById('dream').classList.remove("hidden");
