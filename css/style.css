@@ -585,11 +585,15 @@ input[name="r"] {
 	border: 3px solid;
 	padding: 5px 10px;
 }
+	.tag.abs {
+		border-color: chartreuse;
+		background: linear-gradient(135deg, transparent, chartreuse);
+	}
 	.tag.sus {
 		border-color: red;
 		background: linear-gradient(135deg, transparent, red);
 	}
-	.tag.prophetic {
+	.tag.prop {
 		border-color: darkturquoise;
 		background: linear-gradient(135deg, transparent, darkturquoise);
 	}
