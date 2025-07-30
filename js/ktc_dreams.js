@@ -45,9 +45,11 @@ async function loadMoreDreams() {
 			<a class="dream_p" href="dream?id=${encodeURIComponent(i)}">
 				<div class="title"> ${_dream.title} </div>
 				<div class="date"> ${_dream.date} </div>
-				${"tags" in _dream ? _dream.tags.map(_tag => `
-					<div class="tag ${_tag}"> ${_tag_text[_tag] || _tag} </div>
-				`).join("") : ""}
+				<div class="tags">
+					${"tags" in _dream ? _dream.tags.map(_tag => `
+						<div class="tag ${_tag}"> ${_tag_text[_tag] || _tag} </div>
+					`).join("") : ""}
+				</div>
 			</a>
 		`;
 		_dreams_list.appendChild(_card);
