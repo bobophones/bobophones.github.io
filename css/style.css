@@ -96,7 +96,7 @@ img {
 	justify-content: right;
 	align-items: center;
 	background-color: rgb(0, 0, 0, 0.5);
-	z-index: 4;
+	z-index: 20;
 	visibility: hidden;
 	opacity: 0;
 	transition: 0.125s;
@@ -471,7 +471,7 @@ input[name="r"] {
 		opacity: 1;
 	}
 .gallery_img {
-	z-index: 4;
+	z-index: 20;
 	max-width: 95%;
 	max-height: 95%;
 	transform: scale(0.9);
@@ -494,7 +494,7 @@ input[name="r"] {
 	background-color: rgb(0, 0, 0, 0.5);
 	text-align: left;
 	overflow-y: auto;
-	z-index: 4;
+	z-index: 20;
 	visibility: hidden;
 	opacity: 0;
 }
