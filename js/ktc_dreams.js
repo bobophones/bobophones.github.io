@@ -5,8 +5,9 @@ let _dreams_i = [];
 let _loaded_dreams = [];
 
 const _tag_text = {
+	"abs": "Абсурдный",
 	"sus": "Подозрительный",
-	"prophetic": "Вещий"
+	"prop": "Вещий"
 };
 
 async function init() {
