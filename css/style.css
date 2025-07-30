@@ -586,16 +586,16 @@ input[name="r"] {
 	padding: 5px 10px;
 }
 	.tag.abs {
-		border-color: limegreen;
-		background: linear-gradient(135deg, transparent, limegreen);
+		border-color: darkolivegreen;
+		background: linear-gradient(135deg, transparent, darkolivegreen);
 	}
 	.tag.sus {
-		border-color: red;
-		background: linear-gradient(135deg, transparent, red);
+		border-color: firebrick;
+		background: linear-gradient(135deg, transparent, firebrick);
 	}
 	.tag.prop {
-		border-color: darkturquoise;
-		background: linear-gradient(135deg, transparent, darkturquoise);
+		border-color: teal;
+		background: linear-gradient(135deg, transparent, teal);
 	}
 
 .dream, .not_found {
