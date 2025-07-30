@@ -584,8 +584,8 @@ input[name="r"] {
 			background: linear-gradient(135deg, transparent, red);
 		}
 		.dream_p .tag.prophetic {
-			border-color: aqua;
-			background: linear-gradient(135deg, transparent, aqua);
+			border-color: darkturquoise;
+			background: linear-gradient(135deg, transparent, darkturquoise);
 		}
 
 .dream, .not_found {
