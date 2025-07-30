@@ -54,6 +54,7 @@ img {
 	padding: 15px 30px;
 	background: linear-gradient(135deg, #1C1E21C1, #1C1E213C);
 	box-shadow: rgb(0, 0, 0, 0.4) 0px 0px 25px;
+	z-index: 10;
 }
 	.header .logo {
 		display: flex;
@@ -560,9 +561,9 @@ input[name="r"] {
 	outline: 5px solid #1C1E21;
 	border-radius: 35px;
 	background: linear-gradient(135deg, transparent, #1C1E2184);
-	overflow: hidden;
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
 	padding: 20px 30px;
 }
 	.dream_p:hover {
@@ -571,6 +572,17 @@ input[name="r"] {
 	.dream_p .title {
 		font-size: 40px;
 	}
+	.dream_p .tag {
+		font-size: 15px;
+		border-radius: 10px;
+		border: 3px solid;
+		padding: 5px 10px;
+		margin-top: 10px;
+	}
+		.dream_p .tag.sus {
+			border-color: red;
+			background: linear-gradient(135deg, transparent, red);
+		}
 
 .dream, .not_found {
 	margin: 50px 120px;
