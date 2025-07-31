@@ -45,17 +45,17 @@ async function load_dreams() {
 		if (!_res.ok) continue;
 
 		const _dream = await _res.json();
-		const _card = document.createElement('div');
+		const _card = document.createElement('a');
+		_card.className = "dream_p";
+		_card.href = "dream?id=${encodeURIComponent(i)}";
 		_card.innerHTML = `
-			<a class="dream_p" href="dream?id=${encodeURIComponent(i)}">
-				<div class="title"> ${_dream.title} </div>
-				<div class="date"> ${_dream.date} </div>
-				<div class="tags">
-					${"tags" in _dream ? _dream.tags.map(_tag => `
-						<div class="tag ${_tag}"> ${_tag_text[_tag] || _tag} </div>
-					`).join("") : ""}
-				</div>
-			</a>
+			<div class="title"> ${_dream.title} </div>
+			<div class="date"> ${_dream.date} </div>
+			<div class="tags">
+				${"tags" in _dream ? _dream.tags.map(_tag => `
+					<div class="tag ${_tag}"> ${_tag_text[_tag] || _tag} </div>
+				`).join("") : ""}
+			</div>
 		`;
 		_dreams_list.appendChild(_card);
 		_loaded_count += 1;
