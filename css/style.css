@@ -563,7 +563,7 @@ input[name="r"] {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 150px;
+	min-height: 150px;
 	text-align: center;
 	line-height: 45px;
 }
@@ -818,7 +818,7 @@ input[name="r"] {
 		min-height: calc(100vh - 310px);
 	}
 	.dreams_t {
-		height: 100px;
+		min-height: 100px;
 		font-size: 25px;
 		line-height: 30px;
 	}
