@@ -18,7 +18,7 @@ async function init() {
 
 	load_dreams();
 
-	window.addEventListener('scroll', onScroll);
+	window.addEventListener('scroll', on_scroll);
 }
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -26,7 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	init();
 });
 
-function onScroll() {
+function on_scroll() {
 	if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200)
 		load_dreams();
 }
