@@ -52,7 +52,7 @@ img {
 	display: flex;
 	align-items: center;
 	padding: 15px 30px;
-	background: linear-gradient(135deg, #1C1E21C1, #1C1E213C);
+	background: linear-gradient(135deg, #1C1E21, transparent);
 	box-shadow: rgb(0, 0, 0, 0.4) 0px 0px 25px;
 	z-index: 10;
 }
