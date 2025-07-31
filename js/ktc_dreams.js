@@ -13,16 +13,16 @@ const _tag_text = {
 };
 
 async function init() {
-	const _res = await fetch('dreams/index.json');
+	const _res = await fetch("dreams/index.json");
 	_dreams_i = await _res.json();
 
 	load_dreams();
 
-	window.addEventListener('scroll', on_scroll);
+	window.addEventListener("scroll", on_scroll);
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-	_dreams_list = document.getElementById('dreams')
+	_dreams_list = document.getElementById("dreams");
 	init();
 });
 
@@ -45,9 +45,9 @@ async function load_dreams() {
 		if (!_res.ok) continue;
 
 		const _dream = await _res.json();
-		const _card = document.createElement('a');
+		const _card = document.createElement("a");
 		_card.className = "dream_p";
-		_card.href = "dream?id=${encodeURIComponent(i)}";
+		_card.href = `dream?id=${encodeURIComponent(i)}`;
 		_card.innerHTML = `
 			<div class="title"> ${_dream.title} </div>
 			<div class="date"> ${_dream.date} </div>
