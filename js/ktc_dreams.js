@@ -1,6 +1,5 @@
 let _dreams_list;
-let _loaded_count = 0;
-const _batch_size = 15;
+const _batch_size = 12;
 let _dreams_i = [];
 let _loaded_dreams = [];
 
@@ -31,8 +30,6 @@ function onScroll() {
 }
 
 async function loadMoreDreams() {
-	if (_loaded_count >= _dreams_i.length) return;
-
 	const _next_batch = _dreams_i.slice(_loaded_count, _loaded_count + _batch_size);
 	for (const i of _next_batch) {
 		if (_loaded_dreams.indexOf(i) !== -1) continue;
