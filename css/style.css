@@ -553,7 +553,9 @@ input[name="r"] {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 70px;
+	height: 150px;
+	text-align: center;
+	line-height: 45px;
 }
 
 .dream_p {
@@ -823,8 +825,9 @@ input[name="r"] {
 		min-height: calc(100vh - 280px);
 	}
 	.dreams_t {
-		height: 50px;
+		height: 100px;
 		font-size: 30px;
+		line-height: 35px;
 	}
 
 	.dream_p {
