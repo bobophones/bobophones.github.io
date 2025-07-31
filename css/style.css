@@ -540,7 +540,7 @@ input[name="r"] {
 
 .dreams {
 	padding: 0 30px 30px 30px;
-	min-height: calc(100vh - 330px);
+	min-height: calc(100vh - 390px);
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -822,7 +822,7 @@ input[name="r"] {
 	}
 
 	.dreams {
-		min-height: calc(100vh - 280px);
+		min-height: calc(100vh - 310px);
 	}
 	.dreams_t {
 		height: 100px;
