@@ -259,6 +259,15 @@ img {
 	.bio .title, .project .title {
 		font-size: 30px;
 	}
+	.project .type {
+		font-size: 20px;
+		color: #97ADB2;
+		margin-bottom: 10px;
+	}
+	.project .ver {
+		color: #97ADB2;
+		margin-top: 10px;
+	}
 	.bio .text, .project .text {
 		margin-top: 10px;
 	}
