@@ -1,7 +1,10 @@
-let _dreams_list;
-const _batch_size = 12;
+const _batch_size = 15;
 let _dreams_i = [];
 let _loaded_dreams = [];
+let _loaded_count = 0;
+let _loading = false;
+
+let _dreams_list;
 
 const _tag_text = {
 	"abs": "Абсурдный",
@@ -13,7 +16,7 @@ async function init() {
 	const _res = await fetch('dreams/index.json');
 	_dreams_i = await _res.json();
 
-	loadMoreDreams();
+	load_dreams();
 
 	window.addEventListener('scroll', onScroll);
 }
@@ -24,13 +27,17 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function onScroll() {
-	if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
-		loadMoreDreams();
-	}
+	if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200)
+		load_dreams();
 }
 
-async function loadMoreDreams() {
+async function load_dreams() {
+	if (_loading) return;
+	else _loading = true;
+	if (_loaded_count >= _dreams_i.length) return;
+
 	const _next_batch = _dreams_i.slice(_loaded_count, _loaded_count + _batch_size);
+	let _to_load = _loaded_count + _next_batch.length;
 	for (const i of _next_batch) {
 		if (_loaded_dreams.indexOf(i) !== -1) continue;
 		_loaded_dreams.push(i);
@@ -51,6 +58,8 @@ async function loadMoreDreams() {
 			</a>
 		`;
 		_dreams_list.appendChild(_card);
+		_loaded_count += 1;
+		if (_loaded_count >= _to_load)
+			_loading = false;
 	}
-	_loaded_count += _next_batch.length;
 }
