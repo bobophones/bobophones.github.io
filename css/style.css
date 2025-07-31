@@ -194,14 +194,14 @@ img {
 	align-items: center;
 	margin: -80px -120px 0 -120px;
 }
-
 	.info .icon {
 		height: 560px;
-		margin: 80px 40px 0 0;
 	}
 		.info .icon.project {
 			height: 400px;
 			width: auto;
+			border-radius: 60px;
+			box-shadow: rgb(0, 0, 0, 0.4) 0 10px 25px 5px;
 		}
 
 	.info .panel {
@@ -247,7 +247,7 @@ img {
 		margin: 20px;
 		height: 240px;
 		background-color: #141719;
-		border-radius: 10px;
+		border-radius: 30px;
 	}
 	.bio .des, .project .des {
 		margin: 20px;
@@ -684,23 +684,23 @@ input[name="r"] {
 		flex-direction: column;
 		margin: -80px -20px 0 -20px;
 	}
-
 		.info .icon {
 			height: 300px;
 			margin: 70px 0 0 0;
 		}
-
+			.info .icon.project {
+				height: 250px;
+				border-radius: 30px;
+			}
 		.info .panel {
 			margin: 0 40px 40px 40px;
 			text-align: center;
 			padding: 15px;
 		}
-
 		.info .title {
 			font-size: 26px;
 			line-height: 30px;
 		}
-
 		.info .text {
 			font-size: 18px;
 		}
@@ -719,59 +719,44 @@ input[name="r"] {
 		margin: 15px 0;
 		flex-direction: column;
 	}
-
 		.bio.right, .project.right {
 			margin: 15px 0;
 		}
-
 		.bio.left, .project.left {
 			margin: 15px 0;
 		}
-
 		.bio.right, .project.right {
 			justify-content: left;
 			text-align: left;
 		}
-
 		.bio .avatar, .project .icon {
 			margin: 20px 40px;
 			height: auto;
 		}
-
 		.bio .des, .project .des {
 			margin: 0 20px 20px 20px;
 		}
-
 		.bio .title, .project .title {
 			font-size: 25px;
 		}
-
 		.bio .text, .project .text {
 			margin-top: 8px;
 		}
-
 		.bio .links {
 			margin-top: 10px;
 		}
-
 		.bio .link {
 			padding: 6px 8px;
 		}
-
 			.bio .link .text {
 				font-size: 15px;
 			}
-
 			.bio .link .icon {
 				height: 18px;
 			}
 
 	.project_des {
 		margin: 20px;
-	}
-
-	.info .icon.project {
-		height: 250px;
 	}
 
 	.lproject {
@@ -785,7 +770,6 @@ input[name="r"] {
 	.footer {
 		padding: 0 140px;
 	}
-
 		.footer .ktc_smoke {
 			height: 100px;
 		}
@@ -803,7 +787,6 @@ input[name="r"] {
 	.item {
 		flex-direction: column;
 	}
-
 		.item.chb {
 			margin: 20px 0 0 0;
 		}
