@@ -589,8 +589,8 @@ input[name="r"] {
 	padding: 5px 10px;
 }
 	.tag.abs {
-		border-color: darkolivegreen;
-		background: linear-gradient(135deg, transparent, darkolivegreen);
+		border-color: olivedrab;
+		background: linear-gradient(135deg, transparent, olivedrab);
 	}
 	.tag.sus {
 		border-color: firebrick;
