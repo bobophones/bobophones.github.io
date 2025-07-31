@@ -205,7 +205,6 @@ img {
 		}
 
 	.info .panel {
-		margin: 80px 40px 0 0;
 		background: linear-gradient(135deg, #1C1E2184, transparent);
 		padding: 20px 30px 30px 30px;
 		border-radius: 20px;
@@ -693,7 +692,6 @@ input[name="r"] {
 				border-radius: 30px;
 			}
 		.info .panel {
-			margin: 0 40px 40px 40px;
 			text-align: center;
 			padding: 15px;
 		}
