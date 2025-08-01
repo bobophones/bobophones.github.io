@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="../../img/icon.svg" type="image/png">
+	<link rel="stylesheet" href="../../css/style.css">
+	<script src="../../js/gallery_src.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Jost:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="KoteykaTheCat">
+	<meta property="og:site_name" content="Bobophone Studios">
+	<meta property="og:locale" content="ru">
+
+	<title> Портфолио Котейки </title>
+	<meta property="og:title" content="Портфолио Котейки">
+	<meta name="description" content="Портфолио Котейки">
+	<meta property="og:description" content="Портфолио Котейки">
+	<meta name="keywords" content="bobophone studios, bobophonestudios, портфолио котейки">
+	<meta property="og:image" content="https://raw.githubusercontent.com/bobophonestudios/bobophonestudios.github.io/main/img/icon_ktc.png">
+	<meta property="twitter:image" content="https://raw.githubusercontent.com/bobophonestudios/bobophonestudios.github.io/main/img/icon_ktc.png">
+</head>
+
+<body class="body">
+	<div class="page">
+		<header class="header">
+			<div class="logo">
+				<img class="icon" src="../../img/icon_ktc.png" style="border-radius: 15px">
+				<div class="text"> Портфолио Котейки </div>
+			</div>
+			<a class="link" href="../../"> Главная </a>
+		</header>
+
+		<main class="main">
+			<div class="portfolio title"> Портфолио Котейки </div>
+			<div class="portfolio" id="portfolio">
+				<div class="portfolio_p" onclick="open_gallery('../../img/ktc_portfolio/kazotsky_kick.gif')">
+					<div class="title"> Казотски кик </div>
+					<div class="tags">
+						<div class="tag anim"> Анимация </div>
+					</div>
+					<img class="img" src="../../img/ktc_portfolio/kazotsky_kick.gif">
+				</div>
+				<div class="portfolio_p" onclick="open_gallery('../../img/ktc_portfolio/cool_skeleton.gif')">
+					<div class="title"> Крутой скелет </div>
+					<div class="tags">
+						<div class="tag anim"> Анимация </div>
+					</div>
+					<img class="img" src="../../img/ktc_portfolio/cool_skeleton.gif">
+				</div>
+				<div class="portfolio_p" onclick="open_gallery('../../img/ktc_portfolio/little_skeleton.gif')">
+					<div class="title"> Маленький скелет </div>
+					<div class="tags">
+						<div class="tag anim"> Анимация </div>
+						<div class="tag texture"> Текстура </div>
+					</div>
+					<img class="img" src="../../img/ktc_portfolio/little_skeleton.gif">
+				</div>
+				<div class="portfolio_p" onclick="open_gallery('../../img/ktc_portfolio/long_chicken.gif')">
+					<div class="title"> Длинная курица </div>
+					<div class="tags">
+						<div class="tag anim"> Анимация </div>
+					</div>
+					<img class="img" src="../../img/ktc_portfolio/long_chicken.gif">
+				</div>
+				<div class="portfolio_p" onclick="open_gallery('../../img/ktc_portfolio/man.gif')">
+					<div class="title"> Ман </div>
+					<div class="tags">
+						<div class="tag anim"> Анимация </div>
+						<div class="tag texture"> Текстура </div>
+					</div>
+					<img class="img" src="../../img/ktc_portfolio/man.gif">
+				</div>
+				<div class="portfolio_p" onclick="open_gallery('../../img/ktc_portfolio/topayeteh.gif')">
+					<div class="title"> Топаете </div>
+					<div class="tags">
+						<div class="tag anim"> Анимация </div>
+						<div class="tag texture"> Текстура </div>
+					</div>
+					<img class="img" src="../../img/ktc_portfolio/topayeteh.gif">
+				</div>
+				<div class="portfolio_p" onclick="open_gallery('../../img/ktc_portfolio/crouton_tree.png')">
+					<div class="title"> Сухариковое дерево </div>
+					<div class="tags">
+						<div class="tag texture"> Текстура </div>
+					</div>
+					<img class="img" src="../../img/ktc_portfolio/crouton_tree.png">
+				</div>
+				<div class="portfolio_p" onclick="open_gallery('../../img/ktc_portfolio/tungsten_stuff.png')">
+					<div class="title"> Вольфрамовые вещи </div>
+					<div class="tags">
+						<div class="tag texture"> Текстура </div>
+					</div>
+					<img class="img" src="../../img/ktc_portfolio/tungsten_stuff.png">
+				</div>
+				<div class="portfolio_p" onclick="open_gallery('../../img/ktc_portfolio/sugar_stuff.png')">
+					<div class="title"> Сахарные вещи </div>
+					<div class="tags">
+						<div class="tag texture"> Текстура </div>
+					</div>
+					<img class="img" src="../../img/ktc_portfolio/sugar_stuff.png">
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="links">
+				<a class="link" href="https://discord.gg/yxWQN6Vruh"> Discord </a>
+				<a class="link" href="https://www.youtube.com/@bobophonestudios"> YouTube </a>
+				<a class="link" href="https://steamcommunity.com/groups/bobophonestudios"> Steam Group </a>
+			</div>
+			<img class="ktc_smoke" src="../img/ktc_smoke.gif">
+			<div class="copyright"> © 2025 Bobophone Studios </div>
+		</footer>
+
+		<div class="gallery" id="gallery" onclick="close_gallery()">
+			<img class="gallery_img" src="" id="gallery_img">
+		</div>
+	</div>
+</body>
+</html>

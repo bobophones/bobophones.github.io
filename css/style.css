@@ -258,6 +258,10 @@ img {
 	}
 	.bio .title, .project .title {
 		font-size: 30px;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 15px;
 	}
 	.project .type {
 		font-size: 20px;
@@ -295,12 +299,12 @@ img {
 		.bio .link .icon, .project .link .icon {
 			height: 20px;
 			border-radius: 0;
-			margin: 0;
+			margin-right: 5px;
 			background-color: initial;
 		}
 		.bio .link .text, .project .link .text {
-			margin: 0 0 0 5px;
 			font-size: 18px;
+			margin: 0;
 		}
 	.bio .link {
 		outline: 3px solid #1C1E21;
@@ -470,7 +474,7 @@ input[name="r"] {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(0, 0, 0, 0.5);
+	background-color: rgb(0, 0, 0, 0.75);
 	z-index: 20;
 	visibility: hidden;
 	opacity: 0;
@@ -634,16 +638,30 @@ input[name="r"] {
 	}
 
 
-.portfolio .img {
-	height: 400px;
+.portfolio_p {
 	outline: 5px solid #1C1E21;
 	border-radius: 35px;
 	background: linear-gradient(135deg, transparent, #1C1E2184);
+	padding: 30px 30px 10px 30px;
 }
-	.portfolio .img:hover {
+	.portfolio_p:hover {
 		background-color: #1C1E21;
 		cursor: pointer;
 	}
+	.portfolio_p .img {
+		height: 300px;
+		border-radius: 30px;
+		margin-top: 15px;
+	}
+
+.tag.anim {
+	border-color: mediumseagreen;
+	background: linear-gradient(135deg, transparent, mediumseagreen);
+}
+.tag.texture {
+	border-color: teal;
+	background: linear-gradient(135deg, transparent, teal);
+}
 
 
 
@@ -760,6 +778,7 @@ input[name="r"] {
 		}
 		.bio .title, .project .title {
 			font-size: 25px;
+			gap: 5px;
 		}
 		.bio .text, .project .text {
 			margin-top: 8px;
