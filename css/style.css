@@ -850,8 +850,9 @@ input[name="r"] {
 	}
 		.dreams.title, .portfolio.title {
 			min-height: 100px;
-			font-size: 30px;
+			font-size: 28px;
 			line-height: 35px;
+			padding: 20px 10px;
 		}
 
 	.dream_p {
