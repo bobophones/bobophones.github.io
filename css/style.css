@@ -299,7 +299,7 @@ img {
 		.bio .link .icon, .project .link .icon {
 			height: 20px;
 			border-radius: 0;
-			margin-right: 5px;
+			margin: 0 5px 0 0;
 			background-color: initial;
 		}
 		.bio .link .text, .project .link .text {
