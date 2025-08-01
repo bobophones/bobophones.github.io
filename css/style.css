@@ -878,4 +878,8 @@ input[name="r"] {
 			font-size: 25px;
 			line-height: 25px;
 		}
+
+	.portfolio_p .img {
+		height: 180px;
+	}
 }
