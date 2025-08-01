@@ -9,8 +9,11 @@ const _id = _params.get('id');
 let _list;
 
 const _tag_text = {
-	"anim": "��������",
-	"texture": "��������"
+	"anim": "Анимация",
+	"texture": "Текстура"
+};
+const _id_text = {
+	"ktc": "Портфолио Котейки"
 };
 
 async function init() {
@@ -23,7 +26,9 @@ async function init() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-	_dreams_list = document.getElementById("portfolio");
+	_list = document.getElementById("portfolio");
+	document.getElementById("header_text").textContent = _tag_text[_id] || _id;
+	document.getElementById("portfolio_title").textContent = _tag_text[_id] || _id;
 	init();
 });
 
