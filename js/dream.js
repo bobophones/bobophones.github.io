@@ -1,7 +1,7 @@
 const _tag_text = {
-	"abs": "РђР±СЃСѓСЂРґРЅС‹Р№",
-	"sus": "РџРѕРґРѕР·СЂРёС‚РµР»СЊРЅС‹Р№",
-	"prop": "Р’РµС‰РёР№"
+	"abs": "Абсурдный",
+	"sus": "Подозрительный",
+	"prop": "Вещий"
 };
 
 window.addEventListener('DOMContentLoaded', loadDream);
@@ -16,7 +16,7 @@ async function loadDream() {
 
 	try {
 		const _res = await fetch(`../dreams/${decodeURIComponent(_id)}.json`);
-		if (!_res.ok) throw new Error('РќРµ РЅР°Р№РґРµРЅРѕ');
+		if (!_res.ok) throw new Error('Не найдено');
 
 		const _dream = await _res.json();
 		document.getElementById('title').textContent = _dream.title;
