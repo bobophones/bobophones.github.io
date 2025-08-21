@@ -233,10 +233,11 @@ img {
 	margin: 0 120px;
 }
 .bio, .project {
-	border-radius: 20px;
+	border-radius: 50px;
 	background: linear-gradient(135deg, transparent, #1C1E2184);
 	display: flex;
 	width: 100%;
+	padding: 20px;
 }
 	.bio.right, .project.right {
 		margin: 30px 0 50px 15%;
@@ -245,13 +246,12 @@ img {
 		margin: 30px 15% 50px 0;
 	}
 	.bio .avatar, .project .icon {
-		margin: 20px;
 		height: 240px;
 		background-color: #141719;
 		border-radius: 30px;
 	}
 	.bio .des, .project .des {
-		margin: 20px;
+		margin: 0 20px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
