@@ -1,7 +1,7 @@
 const _tag_text = {
-	"abs": "Àáñóðäíûé",
-	"sus": "Ïîäîçðèòåëüíûé",
-	"prop": "Âåùèé"
+	"abs": "ÐÐ±ÑÑƒÑ€Ð´Ð½Ñ‹Ð¹",
+	"sus": "ÐŸÐ¾Ð´Ð¾Ð·Ñ€Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹",
+	"prop": "Ð’ÐµÑ‰Ð¸Ð¹"
 };
 
 window.addEventListener('DOMContentLoaded', loadDream);
@@ -16,7 +16,7 @@ async function loadDream() {
 
 	try {
 		const _res = await fetch(`../dreams/${decodeURIComponent(_id)}.json`);
-		if (!_res.ok) throw new Error('Íå íàéäåíî');
+		if (!_res.ok) throw new Error('ÃÃ¥ Ã­Ã Ã©Ã¤Ã¥Ã­Ã®');
 
 		const _dream = await _res.json();
 		document.getElementById('title').textContent = _dream.title;
@@ -25,6 +25,7 @@ async function loadDream() {
 			document.getElementById('tags').innerHTML = _dream.tags.map(_tag => `
 				<div class="tag ${_tag}"> ${_tag_text[_tag] || _tag} </div>
 			`).join("")
+
 		}
 		document.getElementById('text').innerHTML = _dream.text;
 		document.title = _dream.title;
