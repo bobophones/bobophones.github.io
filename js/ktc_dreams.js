@@ -7,9 +7,10 @@ let _loading = false;
 let _dreams_list;
 
 const _tag_text = {
-	"abs": "РђР±СЃСѓСЂРґРЅС‹Р№",
-	"sus": "РџРѕРґРѕР·СЂРёС‚РµР»СЊРЅС‹Р№",
-	"prop": "Р’РµС‰РёР№"
+	"abs": "Абсурдный",
+	"sus": "Подозрительный",
+	"prop": "Вещий",
+	"nm": "Кошмар"
 };
 
 async function init() {

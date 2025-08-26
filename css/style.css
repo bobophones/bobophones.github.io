@@ -613,6 +613,10 @@ input[name="r"] {
 		border-color: teal;
 		background: linear-gradient(135deg, transparent, teal);
 	}
+	.tag.nm {
+		border-color: sienna;
+		background: linear-gradient(135deg, transparent, sienna);
+	}
 
 .dream, .not_found {
 	margin: 50px 120px;
