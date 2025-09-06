@@ -184,6 +184,23 @@ img {
 		font-size: 25px;
 	}
 
+	.mlink.curseforge {
+		outline: 5px solid #F16436;
+		background: linear-gradient(135deg, transparent, #F16436);
+		overflow: hidden;
+	}
+		.mlink.curseforge:hover {
+			background-color: #F16436;
+		}
+	.mlink.modrinth {
+		outline: 5px solid #1BD96A;
+		background: linear-gradient(135deg, transparent, #1BD96A);
+		overflow: hidden;
+	}
+		.mlink.modrinth:hover {
+			background-color: #1BD96A;
+		}
+
 
 .info {
 	height: calc(100vh - 80px);
@@ -204,6 +221,7 @@ img {
 			width: auto;
 			border-radius: 60px;
 			box-shadow: rgb(0, 0, 0, 0.4) 0 10px 25px 5px;
+			padding: 0;
 		}
 
 	.info .panel {
