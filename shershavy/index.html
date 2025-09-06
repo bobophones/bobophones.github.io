@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="../img/icon.svg" type="image/png">
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/burger.js"></script>
+	<script src="../js/gallery.js"></script>
+	<script src="../js/changelog.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Jost:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="KoteykaTheCat">
+	<meta property="og:site_name" content="Bobophones">
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="og:locale" content="ru">
+
+	<title> Shershavy </title>
+	<meta property="og:title" content="Shershavy">
+	<meta name="description" content="Этот мод добавляет много разного контента. Мобы, такие как эмбиент мобы и разные цивилизации. Структуры, такие как сахарный замок. Разные механики, такие как магия и ПВО. Тонны новых декоративных блоков">
+	<meta property="og:description" content="Этот мод добавляет много разного контента. Мобы, такие как эмбиент мобы и разные цивилизации. Структуры, такие как сахарный замок. Разные механики, такие как магия и ПВО. Тонны новых декоративных блоков">
+	<meta name="keywords" content="shershavy, mod minectaft, шершавый, мод майнкрафт">
+	<meta property="og:image" content="https://raw.githubusercontent.com/bobophones/bobophones.github.io/main/img/icon_shershavy.png">
+	<meta property="twitter:image" content="https://raw.githubusercontent.com/bobophones/bobophones.github.io/main/img/icon_shershavy.png">
+</head>
+
+<body class="body">
+	<div class="page">
+		<header class="header">
+			<div class="logo">
+				<img class="icon" src="../img/icon.svg">
+				<div class="text"> Bobophones </div>
+			</div>
+			<a class="link pc" href="../"> Главная </a>
+			<a class="link pc" href="../#projects"> Проекты </a>
+			<a class="link pc" href="../#about"> О нас </a>
+			<button id="burger_b"></button>
+			<label class="mb" style="cursor: pointer" for="burger_b">
+				<img class="burger_icon mb" src="../img/burger.svg">
+			</label>
+		</header>
+
+		<div class="burger" id="burger">
+			<div class="burger_menu">
+				<a class="link" onclick="close_burger()" href="../"> Главная </a>
+				<a class="link" onclick="close_burger()" href="../#projects"> Проекты </a>
+				<a class="link" onclick="close_burger()" href="../#about"> О нас </a>
+			</div>
+		</div>
+
+		<main class="main">
+			<section class="info" style="background-image: url(../img/header_shershavy.png)">
+				<img class="icon project" src="../img/icon_shershavy.png">
+				<div class="panel">
+					<div class="title"> Shershavy </div>
+				</div>
+			</section>
+
+			<section class="project_des">
+				<div class="text">
+					Этот мод добавляет много разного контента. Мобы, такие как эмбиент мобы и разные цивилизации. Структуры, такие как сахарный замок. Разные механики, такие как магия и ПВО. Тонны новых декоративных блоков
+				</div>
+				<div class="text">
+					Версия: 0.1 <br>
+					Дата обновления: - <br>
+					Дата выхода: -
+				</div>
+			</section>
+
+			<section class="project_screenshots">
+				<div class="screenshots">
+					<div class="slides">
+						<input type="radio" name="r" id="r1" checked>
+						<input type="radio" name="r" id="r2">
+						<input type="radio" name="r" id="r3">
+
+						<div class="screenshot s1"><img src="../img/icon_shershavy.png" onclick="open_gallery(this)"></div>
+						<div class="screenshot"><img src="../img/icon_shershavy.png" onclick="open_gallery(this)"></div>
+						<div class="screenshot"><img src="../img/icon_shershavy.png" onclick="open_gallery(this)"></div>
+					</div>
+				</div>
+				<div class="screenshots_nav">
+					<label for="r1" class="sc_nav_bar"></label>
+					<label for="r2" class="sc_nav_bar"></label>
+					<label for="r3" class="sc_nav_bar"></label>
+				</div>
+			</section>
+
+			<div class="section_text"> Скачать </div>
+			<div class="item">
+				<a class="mlink" href="https://www.curseforge.com/minecraft/mc-mods/ktc-rpg">
+					<img class="icon" src="../img/icon_download.svg">
+					<div class="text"> CurseForge </div>
+				</a>
+			</div>
+
+			<div class="item chb">
+				<button id="changelog_b"></button>
+				<label class="mlink lchangelog" style="cursor: pointer" for="changelog_b">
+					<span class="text"> Изменения </span>
+				</label>
+			</div>
+
+
+
+			<section class="changelog" id="changelog">
+				<div class="panel">
+					<div class="title"> Изменения </div>
+					<div class="content">
+						<div class="ver"> 0.1 </div>
+						<div class="date"> - </div>
+						<div class="text">
+							• здарова
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="links">
+				<a class="link" href="https://discord.gg/yxWQN6Vruh"> Discord </a>
+				<a class="link" href="https://www.youtube.com/@bobophones_official"> YouTube </a>
+				<a class="link" href="https://steamcommunity.com/groups/bobophones"> Steam Group </a>
+			</div>
+			<img class="ktc_smoke" src="../img/ktc_smoke.gif">
+			<div class="copyright"> © 2025 Bobophones </div>
+		</footer>
+
+		<div class="gallery" id="gallery" onclick="close_gallery()">
+			<img class="gallery_img" src="" id="gallery_img">
+		</div>
+	</div>
+</body>
+</html>
