@@ -666,6 +666,9 @@ input[name="r"] {
 	.dream .text {
 		margin-top: 15px;
 	}
+	.dream .date {
+		margin-top: 5px;
+	}
 	.dream.hidden {
 		display: none;
 	}
