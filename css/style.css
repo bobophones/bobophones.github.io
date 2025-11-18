@@ -393,6 +393,9 @@ img {
 	.project_des .text {
 		margin: 10px 0;
 	}
+	.project_des .text.ver {
+		color: #97ADB2;
+	}
 .mlink .size {
 	color: #97ADB2;
 	margin: 0 10px 0 -5px;
@@ -596,6 +599,7 @@ input[name="r"] {
 
 .changelog .ver {
 	font-size: 28px;
+	font-family: Jost;
 }
 
 .changelog .text {
