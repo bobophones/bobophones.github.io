@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="../img/icon.svg" type="image/png">
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/burger.js"></script>
+	<script src="../js/gallery.js"></script>
+	<script src="../js/changelog.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Jost:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="KoteykaTheCat">
+	<meta property="og:site_name" content="Bobophones">
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="og:locale" content="ru">
+
+	<title> Overpacked </title>
+	<meta property="og:title" content="Overpacked">
+	<meta name="description" content="This mod adds animation for falling blocks. Revives the mechanics of falling blocks by adding smooth rotation when falling. Sand, gravel, concrete and other blocks no longer just fall — they spin like real physical objects, creating a more dynamic picture of destruction">
+	<meta property="og:description" content="This mod adds animation for falling blocks. Revives the mechanics of falling blocks by adding smooth rotation when falling. Sand, gravel, concrete and other blocks no longer just fall — they spin like real physical objects, creating a more dynamic picture of destruction">
+	<meta name="keywords" content="overpacked, mod minecraft, оверпакед, мод майнкрафт">
+	<meta property="og:image" content="https://raw.githubusercontent.com/bobophones/bobophones.github.io/main/img/icon_overpacked.png">
+	<meta property="twitter:image" content="https://raw.githubusercontent.com/bobophones/bobophones.github.io/main/img/icon_overpacked.png">
+</head>
+
+<body class="body">
+	<div class="page">
+		<header class="header">
+			<div class="logo">
+				<img class="icon" src="../img/icon.svg">
+				<div class="text"> Bobophones </div>
+			</div>
+			<a class="link pc" href="../"> Home </a>
+			<a class="link pc" href="../#projects"> Projects </a>
+			<a class="link pc" href="../#about"> About us </a>
+			<button id="burger_b"></button>
+			<label class="mb" style="cursor: pointer" for="burger_b">
+				<img class="burger_icon mb" src="../img/burger.svg">
+			</label>
+		</header>
+
+		<div class="burger" id="burger">
+			<div class="burger_menu">
+				<a class="link" onclick="close_burger()" href="../"> Home </a>
+				<a class="link" onclick="close_burger()" href="../#projects"> Projects </a>
+				<a class="link" onclick="close_burger()" href="../#about"> About us </a>
+			</div>
+		</div>
+
+		<main class="main">
+			<section class="info" style="background-image: url(../img/screenshots/overpacked_0.png)">
+				<img class="icon project" src="../img/icon_overpacked.png">
+				<div class="panel">
+					<div class="title"> Overpacked </div>
+				</div>
+			</section>
+
+			<section class="project_des">
+				<div class="text">
+					d.
+				</div>
+				<div class="text ver">
+					Version: 1.0 <br>
+					Update date: 17 january 2026 <br>
+					Release date: 17 january 2026
+				</div>
+			</section>
+
+			<section class="project_screenshots">
+				<div class="screenshots">
+					<div class="slides">
+						<input type="radio" name="r" id="r1" checked>
+
+						<div class="screenshot s1"><img src="../img/screenshots/overpacked_0.png" onclick="open_gallery(this)"></div>
+					</div>
+				</div>
+				<div class="screenshots_nav">
+					<label for="r1" class="sc_nav_bar"></label>
+				</div>
+			</section>
+
+			<div class="section_text"> Download </div>
+			<div class="item">
+				<a class="mlink curseforge" href="https://www.curseforge.com/minecraft/mc-mods/overpacked">
+					<img class="icon" src="../img/icon_curseforge.svg">
+					<div class="text"> CurseForge </div>
+				</a>
+				<a class="mlink modrinth" href="https://modrinth.com/mod/overpacked">
+					<img class="icon" src="../img/icon_modrinth.svg">
+					<div class="text"> Modrinth </div>
+				</a>
+			</div>
+
+			<div class="item chb">
+				<button id="changelog_b"></button>
+				<label class="mlink lchangelog" style="cursor: pointer" for="changelog_b">
+					<span class="text"> Change log </span>
+				</label>
+			</div>
+
+
+
+			<section class="changelog" id="changelog">
+				<div class="panel">
+					<div class="title"> Change log </div>
+					<div class="content">
+						<div class="ver"> 1.0 </div>
+						<div class="date"> 17 january 2026 </div>
+						<div class="text">
+							• Mod is out
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="links">
+				<a class="link" href="https://discord.gg/yxWQN6Vruh"> Discord </a>
+				<a class="link" href="https://www.youtube.com/@bobophones_official"> YouTube </a>
+				<a class="link" href="https://steamcommunity.com/groups/bobophones"> Steam Group </a>
+			</div>
+			<img class="ktc_smoke" src="../img/ktc_smoke.gif">
+			<div class="copyright"> © 2026 Bobophones </div>
+		</footer>
+
+		<div class="gallery" id="gallery" onclick="close_gallery()">
+			<img class="gallery_img" src="" id="gallery_img">
+		</div>
+	</div>
+</body>
+</html>
