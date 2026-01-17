@@ -335,9 +335,10 @@ img {
 	}
 	.bio .text {
 	    font-size: 17px;
+		margin-top: 0;
 	}
 	.bio .links {
-		margin-top: 20px;
+		margin-top: 10px;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 13px;
@@ -372,6 +373,9 @@ img {
 		.bio .link .text, .project .link .text {
 			font-size: 18px;
 			margin: 0;
+		}
+		.bio .link .text {
+			font-size: 15px;
 		}
 	.bio .link {
 		outline: 3px solid #1C1E21;
