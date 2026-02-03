@@ -1,10 +1,11 @@
 {
   "homepage": "https://bobophones.github.io/shershavy",
   "promos": {
-    "1.20.1-latest": "1.20.1-0.1",
-    "1.20.1-recommended": "1.20.1-0.1"
+    "1.20.1-latest": "1.20.1-0.2",
+    "1.20.1-recommended": "1.20.1-0.2"
   },
   "1.20.1": {
+    "1.20.1-0.2": "Added new content, bug fixes",
     "1.20.1-0.1": "Mod is out"
   }
 }
