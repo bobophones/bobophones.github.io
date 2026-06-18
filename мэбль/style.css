@@ -433,7 +433,7 @@ img {
 
 .basket {
 	position: fixed;
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	left: 0;
