@@ -43,6 +43,7 @@ img {
 	}
 	.header .link {
 		font-size: 17px;
+	text-decoration: none;
 	}
 	.header .logo .text {
 		margin-left: 10px;
@@ -81,6 +82,10 @@ img {
 	margin: 30px 0;
 }
 
+.link {
+	text-decoration: underline;
+}
+
 .group {
    width: calc(100% - 40px);
 	padding: 20px;
@@ -111,9 +116,6 @@ img {
 		align-items: flex-start;
 		gap: 8px;
 	}
-	.group .link {
-		text-decoration: underline;
-	}
 
 
 
@@ -141,13 +143,6 @@ img {
 		}
 		.carousel .slide .price {
 			font-size: 22px;
-		}
-		.carousel .slide .rating {
-			display: flex;
-			justify-content: flex-start;
-		}
-		.carousel .slide .star {
-			height: 16px;
 		}
 		.carousel .slide .stock {
 			font-size: 12px;
@@ -190,3 +185,61 @@ img {
 		width: 100%;
 		margin-bottom: 10px;
     }
+
+.rating .text, .rating .item .text {
+	font-size: 16px;
+}
+.rating {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 30px;
+}
+.rating .item {
+	display: flex;
+	font-size: 20px;
+	gap: 10px;
+}
+.stars {
+	display: flex;
+	justify-content: flex-start;
+}
+.star {
+	height: 18px;
+}
+.bar {
+	height: 18px;
+	width: 129px;
+	background: #F1F1F1;
+}
+
+.bar {
+	height: 18px;
+	width: 129px;
+	background: #F1F1F1;
+}
+.fill {
+	position: relative;
+	height: 100%;
+	background: #2D3643;
+}
+.fill.f5 {
+	width: 95px;
+}
+.fill.f4 {
+	width: 25px;
+}
+.fill.f3 {
+	width: 8px;
+}
+.fill.f2 {
+	width: 3px;
+}
+.fill.f1 {
+	width: 1px;
+}
+
+.footer {
+	height: 150px;
+	background: #F1F1F1;
+}
