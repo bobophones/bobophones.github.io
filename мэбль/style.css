@@ -430,6 +430,38 @@ img {
 	cursor: pointer;
 }
 
+.c {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.grr {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+}
+.box {
+	width: 300px;
+	height: 40px;
+	border: 1px solid black;
+	margin-top: 10px;
+}
+.categories.grr .item {
+	width: calc(25% - 10px);
+	align-items: flex-start;
+}
+.categories.grr .item .text {
+	font-size: 28px;
+}
+.title.aaa {
+	margin-top: 30px;
+}
+.link.c {
+	font-size: 32px;
+	text-decoration: none;
+	margin-bottom: 20px;
+}
 
 .basket {
 	position: fixed;
