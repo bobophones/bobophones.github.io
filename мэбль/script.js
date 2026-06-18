@@ -34,6 +34,16 @@ function close_basket() {
 	document.getElementsByClassName("basket")[0].style.display = "none";
 }
 
+
+function hide() {
+	document.querySelectorAll('.hidden').forEach(el => {
+		el.classList.remove('hidden');
+	});
+	document.querySelectorAll('.to-hide').forEach(el => {
+		el.classList.add('hidden');
+	});
+}
+
 window.addEventListener("DOMContentLoaded", () => {
 	showSlides(slideIndex[0], 0);
 	showSlides(slideIndex[1], 1);
