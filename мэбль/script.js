@@ -27,6 +27,13 @@ function showSlides(n, id) {
 	}
 }
 
+function open_basket() {
+	document.getElementsByClassName("basket")[0].style.display = "flex";
+}
+function close_basket() {
+	document.getElementsByClassName("basket")[0].style.display = "none";
+}
+
 window.addEventListener("DOMContentLoaded", () => {
 	showSlides(slideIndex[0], 0);
 	showSlides(slideIndex[1], 1);

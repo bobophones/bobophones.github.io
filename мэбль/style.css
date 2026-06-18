@@ -330,23 +330,23 @@ img {
 	max-width: 400px;
 	width: 100%;
 }
+.info .gg {
+	border: 1px solid black;
+}
 .add {
 	margin-top: 10px;
 	display: flex;
 	gap: 10px;
 }
-.info .button, .count, .accessories .add .button {
+.count, .button.red {
 	font-size: 18px;
-	border: 1px solid black;
-	padding: 10px;
-}
-.add .count, .add .button {
 	border: 1px solid #750000;
 	border-radius: 10px;
 	display: flex;
 	justify-content: center;
+	padding: 10px;
 }
-.add .button {
+.button.red {
 	color: white;
 	background: #750000;
 	width: 90%;
@@ -428,6 +428,61 @@ img {
 
 .button, .count {
 	cursor: pointer;
+}
+
+
+.basket {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.1);
+	width: 100vw;
+	height: 100vh;
+}
+.basket .panel {
+	width: 450px;
+	background: white;
+	border-radius: 10px;
+	padding: 20px;
+}
+.basket .title {
+	margin: 0;
+}
+.basket .gr {
+	display: flex;
+	justify-content: space-between;
+}
+.basket .gr .x {
+	aspect-ratio: 1/1;
+	height: 100%;
+	cursor: pointer;
+}
+.basket .gr .img {
+	width: 40%;
+	margin-right: 10px;
+}
+.basket .gr .price {
+	font-size: 20px;
+	font-weight: 700;
+	margin-top: 5px;
+}
+.basket .price-gr {
+	display: flex;
+	justify-content: space-between;
+}
+.basket .text.b {
+	font-weight: 700;
+}
+.basket .button.red {
+	width: calc(100% - 20px);
+	margin-top: 20px;
+}
+.basket .count {
+	width: calc(100% - 20px);
+	margin-top: 10px;
 }
 
 
