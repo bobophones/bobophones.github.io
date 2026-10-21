@@ -6,7 +6,6 @@ function close_changelog() {
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-	document.getElementById("changelog_b").addEventListener("click", open_changelog)
 	document.querySelector("#changelog .panel").addEventListener("click", event => {
 		event._click_on_panel = true;
 	});
