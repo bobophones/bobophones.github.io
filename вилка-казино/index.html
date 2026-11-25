@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>minecraft casino - vilka style</title>
+    <style>
+        :root {
+            --mc-green: #3c8521;
+            --mc-brown: #5d3a1a;
+            --mc-gold: #f1c40f;
+            --mc-bg: #1a1a1a;
+        }
+
+        body {
+            background-color: var(--mc-bg);
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .casino-container {
+            background: var(--mc-brown);
+            padding: 40px;
+            border: 8px solid #3e2711;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--mc-gold);
+            text-shadow: 3px 3px 0px #000;
+            margin-bottom: 20px;
+        }
+
+        .slot-machine {
+            display: flex;
+            gap: 15px;
+            background: #2a1a0a;
+            padding: 20px;
+            border: 4px solid #1a0f05;
+            margin-bottom: 30px;
+        }
+
+        .reel {
+            width: 100px;
+            height: 100px;
+            background: #4a321d;
+            border: 4px solid #5d3a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            border-radius: 5px;
+        }
+
+        .reel img {
+            width: 80%;
+            height: 80%;
+            image-rendering: pixelated;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .balance {
+            font-size: 24px;
+            color: #00ff00;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 20px;
+            background: var(--mc-green);
+            border: 4px solid #245213;
+            color: white;
+            cursor: pointer;
+            font-family: inherit;
+            transition: transform 0.1s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #4cae2d;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .win-msg {
+            height: 30px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: var(--mc-gold);
+        }
+    </style>
+</head>
+<body>
+    <div class="casino-container">
+        <h1>mc casino ⛏️</h1>
+        <div class="balance">баланс: <span id="balance-val">1000</span> 💎</div>
+
+        <div class="slot-machine">
+            <div class="reel" id="reel1">?</div>
+            <div class="reel" id="reel2">?</div>
+            <div class="reel" id="reel3">?</div>
+        </div>
+
+        <div class="controls">
+            <button onclick="spin()">крутить!</button>
+            <div class="win-msg" id="status"></div>
+        </div>
+    </div>
+
+    <script>
+        let balance = 1000;
+        const items = [
+            { name: 'dirt', img: 'img/dirt.png' },
+            { name: 'diamond', img: 'img/diamond.png' },
+            { name: 'gold', img: 'img/gold_ingot.png'},
+            { name: 'emerald', img: 'img/emerald.png' },
+            { name: 'iron', img: 'img/iron_ingot.png' }
+        ];
+
+        function spin() {
+            if (balance < 10) {
+                document.getElementById('status').innerText = "нет ресурсов! ❌";
+                return;
+            }
+
+            balance -= 10;
+            updateUI();
+            document.getElementById('status').innerText = "крутим...";
+
+            let spins = 0;
+            const maxSpins = 20;
+
+            const interval = setInterval(() => {
+                for (let i = 1; i <= 3; i++) {
+                    const randomItem = items[Math.floor(Math.random() * items.length)];
+                    const reel = document.getElementById(`reel${i}`);
+                    reel.innerHTML = `<img src="${randomItem.img}" alt="${randomItem.name}">`;
+                }
+
+                spins++;
+                if (spins >= maxSpins) {
+                    clearInterval(interval);
+                    checkWin();
+                }
+            }, 50);
+        }
+
+        function checkWin() {
+            const r1 = document.getElementById('reel1').querySelector('img').alt;
+            const r2 = document.getElementById('reel2').querySelector('img').alt;
+            const r3 = document.getElementById('reel3').querySelector('img').alt;
+
+            if (r1 === r2 && r2 === r3) {
+                let multiplier = 100;
+                if (r1 === 'diamond') multiplier = 500;
+                balance += multiplier;
+                document.getElementById('status').innerText = `джекпот: +${multiplier} 💎🔥`;
+            } else {
+                document.getElementById('status').innerText = "не повезло... 💀";
+            }
+            updateUI();
+        }
+
+        function updateUI() {
+            document.getElementById('balance-val').innerText = balance;
+        }
+    </script>
+</body>
+</html>
