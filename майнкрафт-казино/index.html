@@ -148,7 +148,9 @@ const canvas = document.getElementById('wheel');
 const ctx = canvas.getContext('2d');
 ctx.imageSmoothingEnabled = false;
 const N = PRIZES.length;
-const SEG = (Math.PI * 2) / N;
+const TOTAL_W = PRIZES.reduce((s,p)=>s+p.weight,0);
+const ANG = PRIZES.map(p => (p.weight / TOTAL_W) * Math.PI * 2);
+const STARTS = ANG.map((_, i) => ANG.slice(0, i).reduce((s,a)=>s+a, 0));
 const CX = canvas.width / 2, CY = canvas.height / 2, R = canvas.width / 2 - 6;
 
 let balance = START_BALANCE, bet = BETS[1], rotation = 0, spinning = false, customMode = false;
@@ -170,17 +172,18 @@ function drawWheel(){
   ctx.rotate(rotation);
 
   for(let i=0;i<N;i++){
-    const a0 = -Math.PI/2 + i*SEG, a1 = a0 + SEG, p = PRIZES[i];
+    const a0 = -Math.PI/2 + STARTS[i], a1 = a0 + ANG[i], p = PRIZES[i];
 
     ctx.beginPath(); ctx.moveTo(0,0); ctx.arc(0,0,R,a0,a1); ctx.closePath();
     ctx.fillStyle = p.color; ctx.fill();
     ctx.lineWidth = 6; ctx.strokeStyle = '#000'; ctx.stroke();
 
     ctx.save();
-    ctx.rotate(a0 + SEG/2);
-    ctx.translate(R*0.68, 0);
+    ctx.rotate(a0 + ANG[i]/2);
+    const rad = ANG[i] < 0.5 ? R*0.8 : R*0.68;
+    ctx.translate(rad, 0);
     ctx.rotate(Math.PI/2);
-    const size = 76;
+    const size = Math.max(20, Math.min(76, 2*rad*Math.sin(ANG[i]/2)*0.8));
     if(p.loaded){
       ctx.drawImage(p.image, -size/2, -size/2, size, size);
     } else {
@@ -189,9 +192,12 @@ function drawWheel(){
       ctx.fillStyle = 'rgba(255,255,255,.25)'; ctx.fillRect(-size/2+4,-size/2+4,size/2-4,size/2-4);
     }
     ctx.fillStyle = '#fff'; ctx.strokeStyle = '#000'; ctx.lineWidth = 5;
-    ctx.font = '16px "Press Start 2P", monospace'; ctx.textAlign = 'center';
-    const label = 'x' + p.mult;
-    ctx.strokeText(label, 0, size/2 + 22); ctx.fillText(label, 0, size/2 + 22);
+    if(size >= 36){
+      const fs = Math.max(9, Math.round(16 * size / 76));
+      ctx.font = fs + 'px "Press Start 2P", monospace'; ctx.textAlign = 'center';
+      const label = 'x' + p.mult;
+      ctx.strokeText(label, 0, size/2 + fs + 6); ctx.fillText(label, 0, size/2 + fs + 6);
+    }
     ctx.restore();
   }
   ctx.restore();
@@ -285,8 +291,8 @@ function spin(){
   res.className = 'result'; res.textContent = 'Колесо крутится...';
 
   const win = pickWinner();
-  const jitter = (Math.random()-0.5) * SEG * 0.7;
-  let target = -(win + 0.5) * SEG + jitter;
+  const jitter = (Math.random()-0.5) * ANG[win] * 0.7;
+  let target = -(STARTS[win] + ANG[win]/2) + jitter;
   const twoPi = Math.PI*2;
   const turns = 5 + Math.floor(Math.random()*3);
   const start = rotation;
