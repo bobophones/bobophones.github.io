@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Блок-Казино</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dirt:#6b4a2b; --dirt-dark:#4a321c; --grass:#5da832; --grass-dark:#3f7a1f;
+    --stone:#7f7f7f; --stone-dark:#4d4d4d; --stone-light:#b5b5b5;
+    --gold:#f5c542; --red:#c0392b; --emerald:#17dd62;
+  }
+  *{box-sizing:border-box;image-rendering:pixelated}
+  body{
+    margin:0; min-height:100vh;
+    font-family:'Press Start 2P',monospace,sans-serif;
+    color:#fff; font-size:12px; line-height:1.6;
+    background-color:var(--dirt);
+    background-image:
+      linear-gradient(45deg,rgba(0,0,0,.18) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.18) 75%),
+      linear-gradient(45deg,rgba(0,0,0,.18) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.18) 75%);
+    background-size:64px 64px; background-position:0 0,32px 32px;
+  }
+  .grass-bar{height:32px;background:var(--grass);border-bottom:8px solid var(--dirt-dark);
+    background-image:linear-gradient(90deg,var(--grass-dark) 8px,transparent 8px);background-size:32px 100%}
+  header{text-align:center;padding:24px 12px 8px}
+  h1{margin:0;font-size:clamp(20px,5vw,40px);color:var(--gold);
+     text-shadow:4px 4px 0 #000,-2px -2px 0 #7a5d00}
+  .sub{margin-top:12px;color:var(--stone-light);text-shadow:2px 2px 0 #000}
+
+  .panel{
+    background:var(--stone); border:6px solid #000;
+    box-shadow:inset 6px 6px 0 var(--stone-light), inset -6px -6px 0 var(--stone-dark);
+    padding:20px;
+  }
+  main{max-width:980px;margin:16px auto 40px;padding:0 12px;display:grid;gap:20px;
+       grid-template-columns:1fr}
+  @media(min-width:860px){main{grid-template-columns:1.4fr 1fr}}
+
+  .stats{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;margin-bottom:16px}
+  .stat{background:#222;border:4px solid #000;padding:10px 14px;display:flex;align-items:center;gap:10px;color:#fff}
+  .stat b{color:var(--emerald);text-shadow:2px 2px 0 #000}
+  .gem{width:20px;height:20px;background:var(--emerald);border:3px solid #0a7a33;
+       box-shadow:inset 3px 3px 0 #8affb3;display:inline-block}
+
+  .wheel-wrap{position:relative;width:100%;max-width:440px;margin:0 auto}
+  canvas{width:100%;height:auto;display:block;background:#1b1b1b;border:6px solid #000;border-radius:50%}
+  .pointer{
+    position:absolute;left:50%;top:-14px;transform:translateX(-50%);z-index:2;
+    width:0;height:0;border-left:18px solid transparent;border-right:18px solid transparent;
+    border-top:34px solid var(--red);filter:drop-shadow(3px 3px 0 #000);
+  }
+
+  .btn{
+    font-family:inherit;font-size:14px;color:#fff;cursor:pointer;
+    background:#8b8b8b;border:4px solid #000;padding:14px 18px;margin:6px 4px;
+    box-shadow:inset 4px 4px 0 #c6c6c6, inset -4px -4px 0 #555;
+    text-shadow:2px 2px 0 #3f3f3f;
+  }
+  .btn:hover:not(:disabled){background:#6f7fc7;box-shadow:inset 4px 4px 0 #a9b4ee, inset -4px -4px 0 #3b4685}
+  .btn:active:not(:disabled){transform:translate(2px,2px)}
+  .btn:disabled{opacity:.55;cursor:not-allowed}
+  .btn.big{display:block;width:100%;max-width:440px;margin:18px auto 0;font-size:16px;
+           background:var(--grass);box-shadow:inset 4px 4px 0 #8fe05a, inset -4px -4px 0 var(--grass-dark)}
+  .btn.big:hover:not(:disabled){background:#6fc23c;box-shadow:inset 4px 4px 0 #a5f06f, inset -4px -4px 0 #3f7a1f}
+  .bets{text-align:center;margin-top:14px}
+  .bets .btn.active{background:var(--gold);color:#000;text-shadow:none;
+    box-shadow:inset 4px 4px 0 #fff0a8, inset -4px -4px 0 #a37b00}
+
+  .custom-bet{display:inline-flex;align-items:center;vertical-align:middle;margin:6px 4px}
+  .custom-bet .btn{margin:0 -4px 0 0;position:relative;z-index:1}
+  .custom-bet input{
+    font-family:inherit;font-size:14px;width:110px;padding:14px 10px;color:#fff;background:#222;
+    border:4px solid #000;outline:none;box-shadow:inset 4px 4px 0 #111;
+  }
+  .custom-bet input:focus{background:#2c2c2c;border-color:var(--gold)}
+  .custom-bet input:disabled{opacity:.55}
+  .custom-bet input::-webkit-outer-spin-button,.custom-bet input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  .custom-bet input{-moz-appearance:textfield}
+  .result{margin-top:16px;min-height:60px;text-align:center;background:#222;border:4px solid #000;padding:12px}
+  .result.win{color:var(--emerald)} .result.lose{color:#ff8a80}
+  .result img{width:48px;height:48px;vertical-align:middle;margin-right:8px}
+
+  h2{margin:0 0 14px;font-size:14px;color:#fff;text-shadow:2px 2px 0 #3f3f3f}
+  .prize-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+  .prize-list li{display:flex;align-items:center;gap:10px;background:#222;border:4px solid #000;padding:8px;font-size:10px}
+  .prize-list .ico{width:32px;height:32px;flex:none;border:3px solid #000;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .prize-list .ico img{width:100%;height:100%}
+  .prize-list .amt{margin-left:auto;color:var(--emerald)}
+  .log{max-height:160px;overflow:auto;font-size:9px;margin-top:16px;background:#222;border:4px solid #000;padding:8px;color:var(--stone-light)}
+  .log div{margin-bottom:4px}
+  footer{text-align:center;color:#ddd;font-size:9px;padding-bottom:30px;text-shadow:2px 2px 0 #000}
+</style>
+</head>
+<body>
+
+<div class="grass-bar"></div>
+
+<header>
+  <h1>⛏ БЛОК-КАЗИНО ⛏</h1>
+  <div class="sub">Крути колесо — добывай изумруды!</div>
+</header>
+
+<main>
+  <section class="panel">
+    <div class="stats">
+      <div class="stat"><span class="gem"></span> Изумруды: <b id="balance">0</b></div>
+      <div class="stat">Ставка: <b id="betShow">10</b></div>
+    </div>
+
+    <div class="wheel-wrap">
+      <div class="pointer"></div>
+      <canvas id="wheel" width="600" height="600"></canvas>
+    </div>
+
+    <div class="bets" id="bets"></div>
+    <button class="btn big" id="spinBtn">КРУТИТЬ КОЛЕСО</button>
+
+    <div class="result" id="result">Сделай ставку и крути!</div>
+  </section>
+
+  <aside class="panel">
+    <h2>Призы</h2>
+    <ul class="prize-list" id="prizeList"></ul>
+    <div class="log" id="log"></div>
+    <div style="text-align:center;margin-top:10px">
+      <button class="btn" id="resetBtn" style="font-size:10px">Сбросить игру</button>
+    </div>
+  </aside>
+</main>
+
+<script>
+const PRIZES = [
+  { name: 'Земля', mult: 0,   weight: 20, color: '#6b4a2b', img: 'img/dirt.png' },
+  { name: 'Булыжник', mult: 0.5, weight: 18, color: '#7f7f7f', img: 'img/cobblestone.png' },
+  { name: 'Железо', mult: 1.5, weight: 14, color: '#d8d8d8', img: 'img/iron_ingot.png' },
+  { name: 'Редстоун', mult: 2,   weight: 12, color: '#c0392b', img: 'img/redstone.png' },
+  { name: 'Золото', mult: 3,   weight: 8,  color: '#f5c542', img: 'img/gold_ingot.png' },
+  { name: 'ТНТ', mult: 0,   weight: 14, color: '#e74c3c', img: 'img/tnt_side.png' },
+  { name: 'Изумруд', mult: 5,   weight: 4,  color: '#17dd62', img: 'img/emerald.png' },
+  { name: 'Алмаз', mult: 10,  weight: 2,  color: '#4de3e0', img: 'img/diamond.png' },
+];
+const BETS = [5, 10, 25, 50];
+const START_BALANCE = 100;
+
+const canvas = document.getElementById('wheel');
+const ctx = canvas.getContext('2d');
+ctx.imageSmoothingEnabled = false;
+const N = PRIZES.length;
+const SEG = (Math.PI * 2) / N;
+const CX = canvas.width / 2, CY = canvas.height / 2, R = canvas.width / 2 - 6;
+
+let balance = START_BALANCE, bet = BETS[1], rotation = 0, spinning = false, customMode = false;
+
+PRIZES.forEach(p => {
+  p.image = new Image();
+  p.loaded = false;
+  p.image.onload = () => { p.loaded = true; drawWheel(); renderPrizes(); };
+  p.image.src = p.img;
+});
+
+function load(){ try{ const v = localStorage.getItem('mc_casino_balance'); if(v!==null) balance = Math.max(0, parseInt(v,10)||0); }catch(e){} }
+function save(){ try{ localStorage.setItem('mc_casino_balance', String(balance)); }catch(e){} }
+
+function drawWheel(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.save();
+  ctx.translate(CX,CY);
+  ctx.rotate(rotation);
+
+  for(let i=0;i<N;i++){
+    const a0 = -Math.PI/2 + i*SEG, a1 = a0 + SEG, p = PRIZES[i];
+
+    ctx.beginPath(); ctx.moveTo(0,0); ctx.arc(0,0,R,a0,a1); ctx.closePath();
+    ctx.fillStyle = p.color; ctx.fill();
+    ctx.lineWidth = 6; ctx.strokeStyle = '#000'; ctx.stroke();
+
+    ctx.save();
+    ctx.rotate(a0 + SEG/2);
+    ctx.translate(R*0.68, 0);
+    ctx.rotate(Math.PI/2);
+    const size = 76;
+    if(p.loaded){
+      ctx.drawImage(p.image, -size/2, -size/2, size, size);
+    } else {
+      ctx.fillStyle = 'rgba(0,0,0,.35)'; ctx.fillRect(-size/2,-size/2,size,size);
+      ctx.strokeStyle = '#000'; ctx.lineWidth = 4; ctx.strokeRect(-size/2,-size/2,size,size);
+      ctx.fillStyle = 'rgba(255,255,255,.25)'; ctx.fillRect(-size/2+4,-size/2+4,size/2-4,size/2-4);
+    }
+    ctx.fillStyle = '#fff'; ctx.strokeStyle = '#000'; ctx.lineWidth = 5;
+    ctx.font = '16px "Press Start 2P", monospace'; ctx.textAlign = 'center';
+    const label = 'x' + p.mult;
+    ctx.strokeText(label, 0, size/2 + 22); ctx.fillText(label, 0, size/2 + 22);
+    ctx.restore();
+  }
+  ctx.restore();
+
+  ctx.beginPath(); ctx.arc(CX,CY,34,0,Math.PI*2);
+  ctx.fillStyle = '#555'; ctx.fill(); ctx.lineWidth = 6; ctx.strokeStyle = '#000'; ctx.stroke();
+  ctx.fillStyle = '#999'; ctx.fillRect(CX-10,CY-10,20,20);
+}
+
+function pickWinner(){
+  const total = PRIZES.reduce((s,p)=>s+p.weight,0);
+  let r = Math.random()*total;
+  for(let i=0;i<N;i++){ r -= PRIZES[i].weight; if(r<=0) return i; }
+  return N-1;
+}
+
+function updateUI(){
+  document.getElementById('balance').textContent = balance;
+  document.getElementById('betShow').textContent = bet >= 1 ? bet : '—';
+  document.getElementById('spinBtn').disabled = spinning || bet < 1 || balance < bet;
+  document.querySelectorAll('#bets .btn').forEach(b=>{
+    if(b.dataset.custom) b.classList.toggle('active', customMode);
+    else b.classList.toggle('active', !customMode && +b.dataset.bet === bet);
+    b.disabled = spinning;
+  });
+  const inp = document.getElementById('customBet');
+  if(inp) inp.disabled = spinning;
+}
+
+function addLog(text){
+  const log = document.getElementById('log');
+  const d = document.createElement('div'); d.textContent = text;
+  log.prepend(d);
+  while(log.children.length > 30) log.removeChild(log.lastChild);
+}
+
+function iconHTML(p){
+  return p.loaded
+    ? `<img src="${p.img}" alt="">`
+    : `<span style="display:block;width:100%;height:100%;background:${p.color}"></span>`;
+}
+
+function renderPrizes(){
+  const ul = document.getElementById('prizeList');
+  ul.innerHTML = '';
+  PRIZES.forEach(p=>{
+    const li = document.createElement('li');
+    li.innerHTML = `<span class="ico" style="background:${p.color}">${iconHTML(p)}</span>
+                    <span>${p.name}</span><span class="amt">x${p.mult}</span>`;
+    ul.appendChild(li);
+  });
+}
+
+function renderBets(){
+  const box = document.getElementById('bets');
+  box.innerHTML = '';
+  BETS.forEach(b=>{
+    const btn = document.createElement('button');
+    btn.className = 'btn'; btn.dataset.bet = b; btn.textContent = b;
+    btn.onclick = ()=>{ if(!spinning){ customMode = false; bet = b; updateUI(); } };
+    box.appendChild(btn);
+  });
+
+  const wrap = document.createElement('div');
+  wrap.className = 'custom-bet';
+  const cbtn = document.createElement('button');
+  cbtn.className = 'btn'; cbtn.dataset.custom = '1'; cbtn.textContent = 'СВОЯ';
+  const inp = document.createElement('input');
+  inp.type = 'number'; inp.id = 'customBet'; inp.min = 1; inp.step = 1;
+  inp.placeholder = '0'; inp.inputMode = 'numeric';
+
+  const applyCustom = ()=>{
+    customMode = true;
+    const v = Math.floor(Number(inp.value));
+    bet = (isFinite(v) && v >= 1) ? v : 0;
+    updateUI();
+  };
+  cbtn.onclick = ()=>{ if(!spinning){ inp.focus(); applyCustom(); } };
+  inp.oninput = ()=>{ if(!spinning) applyCustom(); };
+  inp.onfocus = ()=>{ if(!spinning) applyCustom(); };
+  inp.onkeydown = e=>{ if(e.key === 'Enter') spin(); };
+
+  wrap.appendChild(cbtn); wrap.appendChild(inp);
+  box.appendChild(wrap);
+}
+
+function spin(){
+  if(spinning || bet < 1 || balance < bet) return;
+  balance -= bet; save(); spinning = true; updateUI();
+  const res = document.getElementById('result');
+  res.className = 'result'; res.textContent = 'Колесо крутится...';
+
+  const win = pickWinner();
+  const jitter = (Math.random()-0.5) * SEG * 0.7;
+  let target = -(win + 0.5) * SEG + jitter;
+  const twoPi = Math.PI*2;
+  const turns = 5 + Math.floor(Math.random()*3);
+  const start = rotation;
+  let end = target + twoPi*turns;
+  while(end <= start + twoPi*4) end += twoPi;
+
+  const duration = 5000, t0 = performance.now();
+  const ease = t => 1 - Math.pow(1-t, 4);
+
+  function frame(now){
+    const t = Math.min(1,(now-t0)/duration);
+    rotation = start + (end-start)*ease(t);
+    drawWheel();
+    if(t < 1) requestAnimationFrame(frame);
+    else finish(win);
+  }
+  requestAnimationFrame(frame);
+}
+
+function finish(i){
+  rotation = rotation % (Math.PI*2);
+  const p = PRIZES[i];
+  const gain = Math.floor(bet * p.mult);
+  balance += gain; save(); spinning = false;
+
+  const res = document.getElementById('result');
+  const icon = p.loaded ? `<img src="${p.img}" alt="">` : '';
+  if(gain > bet){
+    res.className = 'result win';
+    res.innerHTML = `${icon}${p.name}! Выигрыш +${gain - bet} изумрудов`;
+    addLog(`${p.name}: +${gain - bet}`);
+  } else if(gain === bet){
+    res.className = 'result';
+    res.innerHTML = `${icon}${p.name}. Ставка вернулась`;
+    addLog(`${p.name}: 0`);
+  } else {
+    res.className = 'result lose';
+    res.innerHTML = `${icon}${p.name}. Потеряно ${bet - gain} изумрудов`;
+    addLog(`${p.name}: -${bet - gain}`);
+  }
+  if(balance < 1){
+    res.innerHTML += '<br><br>Изумруды кончились! Нажми «Сбросить игру».';
+  }
+  updateUI();
+}
+
+document.getElementById('spinBtn').onclick = spin;
+document.getElementById('resetBtn').onclick = ()=>{
+  if(spinning) return;
+  balance = START_BALANCE; save(); updateUI();
+  const res = document.getElementById('result');
+  res.className = 'result'; res.textContent = 'Игра сброшена. Крути!';
+};
+
+load(); renderBets(); renderPrizes(); drawWheel(); updateUI();
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(drawWheel);
+</script>
+</body>
+</html>
